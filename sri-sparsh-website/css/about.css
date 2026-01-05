@@ -63,7 +63,11 @@ body {
 .nav-logo img {
   height: 34px;
 }
-
+.nav-logo span {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
 .nav-links a {
   margin-left: 26px;
   text-decoration: none;
@@ -243,6 +247,7 @@ body {
     font-size: 32px;
   }
 }
+
 
 
 
