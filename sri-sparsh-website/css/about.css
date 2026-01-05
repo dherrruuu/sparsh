@@ -132,7 +132,7 @@ body {
 
 .about-text p {
   font-size: 15px;
-  color: var(--text-muted);
+   color: #3a2a1d;
   margin-bottom: 14px;
 }
 
@@ -243,4 +243,5 @@ body {
     font-size: 32px;
   }
 }
+
 
