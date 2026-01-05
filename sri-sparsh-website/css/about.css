@@ -1,47 +1,70 @@
+/* =========================
+   GOOGLE FONT
+========================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
+/* =========================
+   ROOT VARIABLES
+========================= */
 :root {
   --dark-brown: #1a120a;
   --mid-brown: #3b2a1a;
+  --wood-brown: #6b4a2d;
   --gold: #c9a44c;
   --cream: #f1ede6;
-  --text-dark: #1a120a;
+  --soft-white: #fbf9f6;
+  --text-dark: #2a1c12;
   --text-muted: #5a5046;
 }
 
-/* ===== RESET ===== */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(
-    to bottom,
-    #3b2a1a,
-    #6b4a2d,
-    #d6c3aa,
-    #f1ede6
-  );
-  color: var(--text-dark);
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
 }
 
-/* ===== NAVBAR ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+  color: var(--text-dark);
+
+  /* SMOOTH CONTINUOUS BACKGROUND */
+  background: linear-gradient(
+    to bottom,
+    #1a120a 0%,
+    #3b2a1a 20%,
+    #6b4a2d 40%,
+    #b89a7a 65%,
+    #e7dccb 85%,
+    #f1ede6 100%
+  );
+}
+
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(241,237,230,0.9);
+  background: rgba(241, 237, 230, 0.9);
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
   z-index: 1000;
 }
 
 .nav-inner {
   max-width: 1200px;
   margin: auto;
-  padding: 18px 25px;
+  padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,125 +77,188 @@ body {
 }
 
 .nav-logo img {
-  height: 36px;
+  height: 34px;
+}
+
+.nav-logo span {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-dark);
 }
 
 .nav-links a {
   margin-left: 26px;
   text-decoration: none;
+  font-size: 14px;
+  color: var(--text-dark);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* =========================
+   HERO
+========================= */
+.about-hero {
+  padding-top: 140px;
+  padding-bottom: 90px;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 42px;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+.about-hero p {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #eadfce;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+.about-section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 90px 20px;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text h2 {
+  font-size: 30px;
+  margin-bottom: 16px;
   color: var(--text-dark);
 }
 
-.nav-links a.active {
-  color: var(--gold);
+.about-text p {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
 }
 
-/* ===== HERO ===== */
-.contact-hero {
-  padding-top: 140px;
-  text-align: center;
-  padding-bottom: 80px;
+.about-image img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
 }
 
-.contact-hero h1 {
-  font-size: 40px;
-  color: var(--gold);
+/* =========================
+   VALUES SECTION (NO WHITE PATCH)
+========================= */
+.about-values {
+  padding: 90px 20px;
+  background: transparent;
 }
 
-.contact-hero p {
-  margin-top: 12px;
-  color: #eadfce;
-}
-
-/* ===== CONTACT SECTION ===== */
-.contact-section {
-  padding: 80px 20px;
-}
-
-.contact-grid {
-  max-width: 1100px;
+.values-grid {
+  max-width: 1200px;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 32px;
 }
 
-.contact-card {
-  background: rgba(251,249,246,0.95);
+.value-card {
+  background: rgba(251, 249, 246, 0.96);
   padding: 34px;
-  border-radius: 16px;
-  text-decoration: none;
-  color: var(--text-dark);
+  border-radius: 18px;
   box-shadow: 0 14px 36px rgba(0,0,0,0.12);
-  transition: all 0.35s ease;
+  transition: transform 0.3s ease;
 }
 
-.contact-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+.value-card:hover {
+  transform: translateY(-6px);
 }
 
-.contact-card h3 {
+.value-card h3 {
   margin-bottom: 10px;
+  color: var(--text-dark);
 }
 
-.contact-card p {
+.value-card p {
   font-size: 14px;
   color: var(--text-muted);
 }
 
-.contact-card span {
-  display: inline-block;
-  margin-top: 18px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--gold);
+/* =========================
+   WHY CHOOSE US
+========================= */
+.about-list {
+  margin-top: 25px;
+  padding-left: 18px;
 }
 
-/* ===== FOOTER ===== */
+.about-list li {
+  font-size: 15px;
+  color: #2a1c12; /* DARK TEXT ON LIGHT BG */
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* =========================
+   FOOTER
+========================= */
 .footer {
-  background: #1a120a;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,18,10,0.5),
+    #1a120a
+  );
   color: #d8cfc4;
   text-align: center;
-  padding: 26px;
+  padding: 28px;
   font-size: 14px;
 }
 
-/* ===== FLOATING BUTTONS ===== */
-.float-btn {
-  position: fixed;
-  right: 20px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-decoration: none;
-  font-size: 22px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  z-index: 999;
-}
-
-.call-btn {
-  bottom: 90px;
-  background: #2f6b2f;
-}
-
-.whatsapp-btn {
-  bottom: 25px;
-  background: #25d366;
-}
-
-/* ===== FADE IN ===== */
+/* =========================
+   FADE IN ANIMATION
+========================= */
 .fade-in {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.9s ease;
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero h1 {
+    font-size: 32px;
+  }
 }
