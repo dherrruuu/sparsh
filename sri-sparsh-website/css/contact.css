@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
+/* =====================
+   ROOT VARIABLES
+===================== */
 :root {
   --dark-brown: #1a120a;
   --mid-brown: #3b2a1a;
@@ -10,7 +13,9 @@
   --text-muted: #4a4036;
 }
 
-/* ===== RESET ===== */
+/* =====================
+   RESET
+===================== */
 * {
   margin: 0;
   padding: 0;
@@ -19,23 +24,25 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: var(--text-dark);
   background: linear-gradient(
     to bottom,
     #3b2a1a 0%,
-    #6b4a2d 30%,
-    #d6c3aa 65%,
+    #6b4a2d 35%,
+    #d6c3aa 70%,
     #f1ede6 100%
   );
+  color: var(--text-dark);
   line-height: 1.7;
 }
 
-/* ===== NAVBAR ===== */
+/* =====================
+   NAVBAR
+===================== */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(241,237,230,0.9);
+  background: rgba(241, 237, 230, 0.92);
   backdrop-filter: blur(10px);
   z-index: 1000;
 }
@@ -62,18 +69,20 @@ body {
 .nav-links a {
   margin-left: 26px;
   text-decoration: none;
-  color: var(--text-dark);
   font-size: 14px;
+  color: var(--text-dark);
 }
 
 .nav-links a.active {
   color: var(--gold);
 }
 
-/* ===== HERO ===== */
+/* =====================
+   HERO
+===================== */
 .contact-hero {
   padding-top: 150px;
-  padding-bottom: 70px;
+  padding-bottom: 80px;
   text-align: center;
 }
 
@@ -84,55 +93,50 @@ body {
 
 .contact-hero p {
   margin-top: 12px;
-  color: #eadfce;
-  max-width: 650px;
+  max-width: 680px;
   margin-left: auto;
   margin-right: auto;
+  color: #eadfce;
 }
 
-/* ===== MAP + ADDRESS CONTAINER ===== */
+/* =====================
+   MAP + ADDRESS
+===================== */
 .map-section {
   max-width: 1150px;
   margin: auto;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .map-box {
+  background: rgba(251, 249, 246, 0.96);
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  background: rgba(251,249,246,0.95);
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
 }
 
 /* MAP */
 .map-container {
+  height: 320px;
   position: relative;
-  height: 340px;
 }
 
 .map-container iframe {
   width: 100%;
   height: 100%;
-  border: none;
+  border: 0;
 }
 
-/* CLICKABLE MAP OVERLAY */
-.map-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-}
-
-/* ADDRESS SIDE */
+/* ADDRESS */
 .address-box {
   padding: 40px;
 }
 
 .address-box h3 {
-  margin-bottom: 12px;
   font-size: 22px;
+  margin-bottom: 10px;
 }
 
 .address-box p {
@@ -140,23 +144,25 @@ body {
   color: var(--text-muted);
 }
 
-/* ===== CONTACT CARDS ===== */
+/* =====================
+   CONTACT CARDS
+===================== */
 .contact-cards {
   max-width: 1150px;
-  margin: 35px auto 90px; /* moved UP */
+  margin: 30px auto 90px; /* closer to map */
   padding: 0 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
 }
 
 .contact-card {
-  background: rgba(251,249,246,0.96);
-  padding: 34px;
+  background: rgba(251,249,246,0.97);
+  padding: 36px;
   border-radius: 16px;
   box-shadow: 0 14px 36px rgba(0,0,0,0.15);
-  transition: all 0.35s ease;
   text-align: center;
+  transition: all 0.35s ease;
 }
 
 .contact-card:hover {
@@ -165,8 +171,8 @@ body {
 }
 
 .contact-card h4 {
-  margin-bottom: 8px;
   font-size: 18px;
+  margin-bottom: 6px;
 }
 
 .contact-card p {
@@ -181,16 +187,17 @@ body {
   font-weight: 500;
 }
 
-/* HIGHLIGHT ACTION TEXT */
+/* ACTION TEXT */
 .contact-card span {
   display: inline-block;
   margin-top: 14px;
   font-size: 13px;
   color: var(--gold);
-  font-weight: 500;
 }
 
-/* ===== FOOTER ===== */
+/* =====================
+   FOOTER
+===================== */
 .footer {
   background: #1a120a;
   color: #d8cfc4;
@@ -199,11 +206,13 @@ body {
   font-size: 14px;
 }
 
-/* ===== FADE-IN ===== */
+/* =====================
+   FADE-IN
+===================== */
 .fade-in {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.9s ease;
+  transform: translateY(35px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
 .fade-in.show {
@@ -211,14 +220,16 @@ body {
   transform: translateY(0);
 }
 
-/* ===== RESPONSIVE ===== */
+/* =====================
+   RESPONSIVE
+===================== */
 @media (max-width: 900px) {
   .map-box {
     grid-template-columns: 1fr;
   }
 
   .map-container {
-    height: 280px;
+    height: 260px;
   }
 
   .address-box {
