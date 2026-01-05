@@ -25,6 +25,18 @@ body {
     #f1ede6 100%
   );
 }
+/* =========================
+   FIX FOR FIXED NAVBAR (ALL PAGES)
+========================= */
+body {
+  padding-top: 84px; /* desktop navbar height */
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 72px; /* mobile navbar height */
+  }
+}
 
 /* =========================
    NAVBAR
@@ -91,6 +103,16 @@ body {
 .nav-links a.active {
   color: var(--gold);
 }
+/* =========================
+   HAMBURGER DEFAULT
+========================= */
+.nav-toggle {
+  display: none; /* hidden on desktop */
+  cursor: pointer;
+  color: #2a1c12;
+  user-select: none;
+}
+
 /* =========================
    HERO (PRODUCTS)
 ========================= */
@@ -260,6 +282,7 @@ body {
     padding: 2px 0; /* 🔥 ultra-compact */
   }
 }
+
 
 
 
