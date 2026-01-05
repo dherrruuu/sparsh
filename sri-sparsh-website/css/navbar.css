@@ -61,9 +61,15 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 18px;
+
   letter-spacing: 0.5px;
   color: var(--text-dark);
+
+  line-height: 1;              /* 🔒 IMPORTANT */
+  white-space: nowrap;         /* 🔒 prevents wrapping */
+  -webkit-font-smoothing: antialiased;
 }
+
 
 /* ===== LINKS (DESKTOP) ===== */
 .nav-links {
