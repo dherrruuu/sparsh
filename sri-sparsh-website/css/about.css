@@ -273,3 +273,16 @@ body {
     font-size: 32px;
   }
 }
+/* =========================
+   WHY CHOOSE – LIGHT BACKGROUND FIX
+========================= */
+
+.about-section:last-of-type h2 {
+  color: #2a1c12;   /* dark brown heading */
+}
+
+.about-section:last-of-type .about-list li {
+  color: #3a2a1d;   /* readable dark text */
+  font-weight: 500;
+}
+
