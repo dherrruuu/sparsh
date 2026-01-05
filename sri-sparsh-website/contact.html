@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Contact Us | श्री Sparsh LLP</title>
 
+  <!-- CSS -->
   <link rel="stylesheet" href="/css/contact.css" />
 </head>
 <body>
@@ -31,52 +32,45 @@
 
 <!-- ================= HERO ================= -->
 <section class="contact-hero">
-  <h1>Contact Us</h1>
-  <p>We’re here to help you with premium plywood solutions.</p>
+  <h1>Get in Touch</h1>
+  <p>
+    Have questions about our products or need assistance?  
+    Reach out to us — we’ll be happy to help.
+  </p>
 </section>
 
-<!-- ================= CONTACT SECTION ================= -->
+<!-- ================= CONTACT INFO ================= -->
 <section class="contact-section fade-in">
 
   <div class="contact-grid">
 
-    <!-- CONTACT INFO -->
-    <div class="contact-info">
-      <h2>Get in Touch</h2>
-
+    <!-- LOCATION -->
+    <a
+      href="https://maps.app.goo.gl/9h6N5MeRywTrSa3E9"
+      target="_blank"
+      class="contact-card location-card"
+    >
+      <h3>📍 Godown Location</h3>
       <p>
-        Have questions about our products or need assistance?
-        Reach out to us — we’ll be happy to help.
+        No. 56/1, Adur Village,<br>
+        Virgonagar Post,<br>
+        Bidarahalli Hobli,<br>
+        Bangalore East Taluk,<br>
+        Bangalore – 560049
       </p>
+      <span class="map-link">Click to View on Google Maps →</span>
+    </a>
 
-      <div class="info-item">
-        <strong>📍 Godown Location</strong>
-        <p>Sri Sparsh LLP, India</p>
-      </div>
-
-      <div class="info-item">
-        <strong>📞 Phone</strong>
-        <p>
-          <a href="tel:+918095670293">+91 8095670293</a>
-        </p>
-      </div>
-
-      <div class="info-item">
-        <strong>✉️ Email</strong>
-        <p>
-          <a href="mailto:Info@sparshply.com">Info@sparshply.com</a>
-        </p>
-      </div>
-
+    <!-- PHONE -->
+    <div class="contact-card">
+      <h3>📞 Phone</h3>
+      <p>+91 80956 70293</p>
     </div>
 
-    <!-- MAP -->
-    <div class="contact-map">
-      <iframe
-        src="https://www.google.com/maps?q=9h6N5MeRywTrSa3E9&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+    <!-- EMAIL -->
+    <div class="contact-card">
+      <h3>✉️ Email</h3>
+      <p>Info@sparshply.com</p>
     </div>
 
   </div>
@@ -88,7 +82,7 @@
   © 2026 श्री Sparsh LLP. All Rights Reserved.
 </footer>
 
-<!-- ================= ANIMATION SCRIPT ================= -->
+<!-- ================= FADE IN SCRIPT ================= -->
 <script>
   const items = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver(entries => {
