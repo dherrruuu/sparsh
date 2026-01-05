@@ -77,13 +77,6 @@ body {
   align-items: center;
   gap: 12px;
 }
-
-.nav-logo img {
-  height: 36px;
-}
-
-
-
 /* =========================
    NAV LINKS
 ========================= */
@@ -299,4 +292,5 @@ body {
     padding: 2px 0;
   }
 }
+
 
