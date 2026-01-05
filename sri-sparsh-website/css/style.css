@@ -109,6 +109,9 @@ body {
 .nav-links a.active::after {
   width: 100%;
 }
+.nav-links a.active {
+  color: var(--gold);
+}
 
 /* =========================
    HERO SECTION
