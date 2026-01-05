@@ -457,26 +457,26 @@ body::before {
 
   .nav-toggle {
     display: block;
-    font-size: 22px; /* slightly more subtle */
+    font-size: 21px; /* smallest comfortable size */
   }
 
   .nav-links {
     position: absolute;
-    top: 100%; /* starts exactly below navbar */
+    top: calc(100% - 4px); /* pulls menu closer to navbar */
     left: 0;
     width: 100%;
 
-    background: rgba(241, 237, 230, 0.98);
-    backdrop-filter: blur(8px);
+    background: rgba(241, 237, 230, 0.99);
+    backdrop-filter: blur(6px);
 
     display: none;
     flex-direction: column;
     align-items: center;
 
-    padding: 10px 0;   /* 🔑 major height reduction */
-    gap: 10px;         /* 🔑 tighter spacing */
+    padding: 6px 0; /* 🔥 minimal height */
+    gap: 6px;       /* 🔥 tight spacing */
 
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.07);
   }
 
   .nav-links.active {
@@ -484,7 +484,7 @@ body::before {
   }
 
   .nav-links a {
-    font-size: 15px;
-    padding: 4px 0;    /* 🔑 compact tap area */
+    font-size: 14.5px;
+    padding: 2px 0; /* 🔥 ultra-compact */
   }
 }
