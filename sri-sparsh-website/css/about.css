@@ -39,16 +39,17 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(241,237,230,0.9);
+  background: rgba(241, 237, 230, 0.82);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0,0,0,0.06);
   z-index: 1000;
+  transition: all 0.35s ease;
 }
 
 .nav-inner {
   max-width: 1200px;
   margin: auto;
-  padding: 16px 24px;
+  padding: 18px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,19 +58,21 @@ body {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .nav-logo img {
-  height: 34px;
+  height: 36px;
 }
+
 .nav-logo span {
   font-weight: 600;
   font-size: 18px;
   letter-spacing: 0.5px;
 }
+
 .nav-links a {
-  margin-left: 26px;
+  margin-left: 30px;
   text-decoration: none;
   font-size: 14px;
   color: var(--text-dark);
@@ -79,8 +82,8 @@ body {
 .nav-links a::after {
   content: "";
   position: absolute;
-  left: 0;
   bottom: -6px;
+  left: 0;
   width: 0;
   height: 2px;
   background: var(--gold);
@@ -247,6 +250,7 @@ body {
     font-size: 32px;
   }
 }
+
 
 
 
