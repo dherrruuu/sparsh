@@ -94,6 +94,10 @@ body {
 .nav-links a.active::after {
   width: 100%;
 }
+.nav-links a.active {
+  color: var(--gold);
+}
+
 
 /* ================= HERO ================= */
 .about-hero {
@@ -250,6 +254,7 @@ body {
     font-size: 32px;
   }
 }
+
 
 
 
