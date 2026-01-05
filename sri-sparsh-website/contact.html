@@ -3,19 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <title>Contact Us | श्री Sparsh LLP</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="/css/contact.css" />
 </head>
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <header class="navbar">
   <div class="nav-inner">
     <div class="nav-logo">
-      <img src="/images/logo.svg" alt="Sri Sparsh LLP Logo">
+      <img src="/images/logo.svg" alt="Sri Sparsh LLP">
       <span>श्री Sparsh LLP</span>
     </div>
 
@@ -28,89 +26,95 @@
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="contact-hero">
   <h1>Get in Touch</h1>
   <p>
-    Have questions about our products or need assistance?
-    <br>Reach out to us — we’ll be happy to help.
+    Have questions about our products or need assistance?<br>
+    Reach out to us — we’ll be happy to help.
   </p>
 </section>
 
-<!-- ================= CONTACT INFO ================= -->
-<section class="contact-section fade-in">
-  <div class="contact-grid">
+<!-- MAP + ADDRESS -->
+<section class="contact-main fade-in">
+  <div class="contact-map-box">
 
-    <!-- LOCATION -->
-    <a
-      href="https://maps.app.goo.gl/9h6N5MeRywTrSa3E9"
-      target="_blank"
-      class="contact-card location-card"
-    >
-      <h3>📍 Godown Location</h3>
+    <!-- MAP -->
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps?q=No.%2056/1,%20Adur%20Village,%20Virgonagar%20Post,%20Bidarahalli%20Hobli,%20Bangalore%20560049&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <!-- ADDRESS -->
+    <div class="map-details">
+      <h2>📍 Godown Location</h2>
       <p>
+        Sri Sparsh LLP<br>
         No. 56/1, Adur Village,<br>
         Virgonagar Post,<br>
         Bidarahalli Hobli,<br>
         Bangalore East Taluk,<br>
         Bangalore – 560049
       </p>
-      <span>Click to view on Google Maps →</span>
-    </a>
+
+      <a
+        href="https://maps.app.goo.gl/9h6N5MeRywTrSa3E9"
+        target="_blank"
+        class="map-link">
+        View on Google Maps →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT CARDS -->
+<section class="contact-cards fade-in">
+  <div class="contact-grid">
 
     <!-- PHONE -->
     <a href="tel:+918095670293" class="contact-card">
       <h3>📞 Phone</h3>
-      <p>+91 80956 70293</p>
+      <p><strong>Anil :</strong> +91 80956 70293</p>
       <span>Tap to call →</span>
-    </a>
-
-    <!-- EMAIL -->
-    <a
-      href="mailto:Info@sparshply.com?subject=Inquiry%20from%20Website"
-      class="contact-card"
-    >
-      <h3>✉️ Email</h3>
-      <p>Info@sparshply.com</p>
-      <span>Tap to email →</span>
     </a>
 
     <!-- WHATSAPP -->
     <a
-      href="https://wa.me/918095670293?text=Hello%20Sparsh%20LLP,%20I%20would%20like%20to%20know%20more%20about%20your%20plywood%20products."
+      href="https://wa.me/918095670293"
       target="_blank"
-      class="contact-card whatsapp-card"
-    >
+      class="contact-card">
       <h3>💬 WhatsApp</h3>
       <p>Chat with us instantly</p>
       <span>Open WhatsApp →</span>
     </a>
 
+    <!-- EMAIL -->
+    <a
+      href="mailto:Info@sparshply.com"
+      class="contact-card">
+      <h3>✉️ Email</h3>
+      <p>Info@sparshply.com</p>
+      <span>Send an email →</span>
+    </a>
+
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer class="footer">
   © 2026 श्री Sparsh LLP. All Rights Reserved.
 </footer>
 
-<!-- ================= FLOATING BUTTONS ================= -->
-<a href="tel:+918095670293" class="float-btn call-btn">📞</a>
-
-<a
-  href="https://wa.me/918095670293"
-  target="_blank"
-  class="float-btn whatsapp-btn"
->💬</a>
-
-<!-- ================= ANIMATION ================= -->
+<!-- FADE IN -->
 <script>
   const items = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('show');
     });
   }, { threshold: 0.2 });
 
