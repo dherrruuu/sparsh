@@ -33,9 +33,7 @@ if (navbar) {
   });
 }
 
-/* =========================
-   MOBILE NAV TOGGLE
-========================= */
+/* MOBILE NAV TOGGLE */
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
 
@@ -43,11 +41,14 @@ if (navToggle && navLinks) {
   navToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
   });
-
-  // Optional: close menu when link clicked
-  navLinks.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("active");
-    });
-  });
 }
+
+/* ACTIVE LINK AUTO-DETECT */
+const currentPage = window.location.pathname.split("/").pop();
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  if (link.getAttribute("href") === currentPage) {
+    link.classList.add("active");
+  }
+});
+
