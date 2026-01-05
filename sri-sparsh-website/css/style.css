@@ -462,7 +462,7 @@ body::before {
 
   .nav-links {
     position: absolute;
-    top: calc(100% - 15px); /* pulls menu closer to navbar */
+    top: calc(100% - 5px); /* pulls menu closer to navbar */
     left: 0;
     width: 100%;
 
