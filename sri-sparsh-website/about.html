@@ -6,7 +6,6 @@
 
   <title>About Us | Shree Sparsh LLP</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="./css/about.css" />
 </head>
 <body>
@@ -21,20 +20,16 @@
     </div>
 
     <nav class="nav-links" id="navLinks">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
       <a href="products.html">Products</a>
       <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- MOBILE HAMBURGER -->
-    <div class="nav-toggle" id="navToggle">
-      ☰
-    </div>
+    <div class="nav-toggle" id="navToggle">☰</div>
 
   </div>
 </header>
-
 
 <!-- ================= HERO ================= -->
 <section class="about-hero">
@@ -62,13 +57,13 @@
     </div>
 
     <div class="about-image">
-      <img src="./images/ply.png" alt="Sparsh Plywood Manufacturing com">
+      <img src="./images/ply.png" alt="Sparsh Plywood Manufacturing">
     </div>
 
   </div>
 </section>
 
-<!-- ================= VISION / MISSION ================= -->
+<!-- ================= VALUES ================= -->
 <section class="about-values section-gradient fade-in">
   <div class="values-grid">
 
@@ -98,7 +93,7 @@
   </div>
 </section>
 
-<!-- ================= WHY CHOOSE US ================= -->
+<!-- ================= WHY CHOOSE ================= -->
 <section class="about-section fade-in">
   <h2>Why Choose Sparsh Plywood?</h2>
 
@@ -116,8 +111,19 @@
   © 2026 Shree Sparsh LLP. All Rights Reserved.
 </footer>
 
-<!-- ================= ANIMATION SCRIPT ================= -->
+<!-- ================= JS ================= -->
 <script>
+  /* Mobile Nav Toggle */
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
+
+  /* Fade-in animation */
   const items = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
