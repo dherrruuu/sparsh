@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
+/* =========================
+   ROOT
+========================= */
 :root {
   --dark-brown: #1a120a;
   --mid-brown: #3b2a1a;
   --gold: #c9a44c;
   --cream: #f1ede6;
-  --card-bg: rgba(251,249,246,0.96);
+  --card-bg: rgba(251, 249, 246, 0.96);
   --text-dark: #1a120a;
   --text-muted: #4a3a2d;
 }
 
-/* ===== RESET ===== */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -22,8 +27,14 @@ a {
   color: inherit;
 }
 
+/* =========================
+   BODY (FIXED NAV OFFSET)
+========================= */
 body {
   font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  line-height: 1.7;
+  padding-top: 84px; /* desktop navbar */
   background: linear-gradient(
     to bottom,
     #3b2a1a,
@@ -31,10 +42,17 @@ body {
     #cdb79e,
     #f1ede6
   );
-  color: var(--text-dark);
 }
 
-/* ===== NAVBAR ===== */
+@media (max-width: 768px) {
+  body {
+    padding-top: 72px; /* mobile navbar */
+  }
+}
+
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
   position: fixed;
   top: 0;
@@ -43,7 +61,6 @@ body {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0,0,0,0.06);
   z-index: 1000;
-  transition: all 0.35s ease;
 }
 
 .nav-inner {
@@ -68,15 +85,20 @@ body {
 .nav-logo span {
   font-weight: 600;
   font-size: 18px;
-  letter-spacing: 0.5px;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+.nav-links {
+  display: flex;
 }
 
 .nav-links a {
   margin-left: 30px;
-  text-decoration: none;
   font-size: 14px;
-  color: var(--text-dark);
   position: relative;
+  color: var(--text-dark);
 }
 
 .nav-links a::after {
@@ -94,13 +116,26 @@ body {
 .nav-links a.active::after {
   width: 100%;
 }
+
 .nav-links a.active {
   color: var(--gold);
 }
-/* ===== HERO ===== */
+
+/* =========================
+   HAMBURGER
+========================= */
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+
+/* =========================
+   HERO
+========================= */
 .contact-hero {
-  padding-top: 140px;
-  padding-bottom: 70px;
+  padding: 70px 20px;
   text-align: center;
 }
 
@@ -113,11 +148,12 @@ body {
   margin-top: 12px;
   color: #eadfce;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
 }
 
-/* ===== MAP + ADDRESS WRAPPER ===== */
+/* =========================
+   MAP SECTION
+========================= */
 .map-section {
   max-width: 1150px;
   margin: 0 auto 50px;
@@ -133,7 +169,7 @@ body {
   grid-template-columns: 1.1fr 1fr;
 }
 
-/* ===== MAP ===== */
+/* MAP */
 .map-container {
   height: 300px;
 }
@@ -145,7 +181,7 @@ body {
   display: block;
 }
 
-/* ===== ADDRESS ===== */
+/* ADDRESS */
 .address-box {
   padding: 30px;
 }
@@ -168,7 +204,9 @@ body {
   color: var(--gold);
 }
 
-/* ===== CONTACT CARDS ===== */
+/* =========================
+   CONTACT CARDS
+========================= */
 .contact-cards {
   max-width: 1100px;
   margin: 30px auto 90px;
@@ -209,7 +247,9 @@ body {
   color: var(--gold);
 }
 
-/* ===== FOOTER ===== */
+/* =========================
+   FOOTER
+========================= */
 .footer {
   background: #1a120a;
   color: #d8cfc4;
@@ -218,7 +258,9 @@ body {
   font-size: 14px;
 }
 
-/* ===== RESPONSIVE ===== */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 900px) {
   .map-box {
     grid-template-columns: 1fr;
@@ -228,29 +270,25 @@ body {
     height: 260px;
   }
 }
+
 @media (max-width: 768px) {
 
   .nav-toggle {
     display: block;
-    font-size: 21px; /* smallest comfortable size */
   }
 
   .nav-links {
     position: absolute;
-    top: calc(100% - 4px); /* pulls menu closer to navbar */
+    top: calc(100% - 4px);
     left: 0;
     width: 100%;
-
     background: rgba(241, 237, 230, 0.99);
     backdrop-filter: blur(6px);
-
     display: none;
     flex-direction: column;
     align-items: center;
-
-    padding: 6px 0; /* 🔥 minimal height */
-    gap: 6px;       /* 🔥 tight spacing */
-
+    padding: 6px 0;
+    gap: 6px;
     border-bottom: 1px solid rgba(0,0,0,0.07);
   }
 
@@ -259,9 +297,8 @@ body {
   }
 
   .nav-links a {
+    margin-left: 0;
     font-size: 14.5px;
-    padding: 2px 0; /* 🔥 ultra-compact */
+    padding: 2px 0;
   }
 }
-
-
