@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>Contact Us | श्री Sparsh LLP</title>
 
@@ -14,7 +14,6 @@
 <!-- ================= NAVBAR ================= -->
 <header class="navbar">
   <div class="nav-inner">
-
     <div class="nav-logo">
       <img src="/images/logo.svg" alt="Sri Sparsh LLP Logo">
       <span>श्री Sparsh LLP</span>
@@ -26,7 +25,6 @@
       <a href="/products.html">Products</a>
       <a href="/contact.html" class="active">Contact</a>
     </nav>
-
   </div>
 </header>
 
@@ -34,14 +32,13 @@
 <section class="contact-hero">
   <h1>Get in Touch</h1>
   <p>
-    Have questions about our products or need assistance?  
-    Reach out to us — we’ll be happy to help.
+    Have questions about our products or need assistance?
+    <br>Reach out to us — we’ll be happy to help.
   </p>
 </section>
 
 <!-- ================= CONTACT INFO ================= -->
 <section class="contact-section fade-in">
-
   <div class="contact-grid">
 
     <!-- LOCATION -->
@@ -58,23 +55,38 @@
         Bangalore East Taluk,<br>
         Bangalore – 560049
       </p>
-      <span class="map-link">Click to View on Google Maps →</span>
+      <span>Click to view on Google Maps →</span>
     </a>
 
     <!-- PHONE -->
-    <div class="contact-card">
+    <a href="tel:+918095670293" class="contact-card">
       <h3>📞 Phone</h3>
       <p>+91 80956 70293</p>
-    </div>
+      <span>Tap to call →</span>
+    </a>
 
     <!-- EMAIL -->
-    <div class="contact-card">
+    <a
+      href="mailto:Info@sparshply.com?subject=Inquiry%20from%20Website"
+      class="contact-card"
+    >
       <h3>✉️ Email</h3>
       <p>Info@sparshply.com</p>
-    </div>
+      <span>Tap to email →</span>
+    </a>
+
+    <!-- WHATSAPP -->
+    <a
+      href="https://wa.me/918095670293?text=Hello%20Sparsh%20LLP,%20I%20would%20like%20to%20know%20more%20about%20your%20plywood%20products."
+      target="_blank"
+      class="contact-card whatsapp-card"
+    >
+      <h3>💬 WhatsApp</h3>
+      <p>Chat with us instantly</p>
+      <span>Open WhatsApp →</span>
+    </a>
 
   </div>
-
 </section>
 
 <!-- ================= FOOTER ================= -->
@@ -82,7 +94,16 @@
   © 2026 श्री Sparsh LLP. All Rights Reserved.
 </footer>
 
-<!-- ================= FADE IN SCRIPT ================= -->
+<!-- ================= FLOATING BUTTONS ================= -->
+<a href="tel:+918095670293" class="float-btn call-btn">📞</a>
+
+<a
+  href="https://wa.me/918095670293"
+  target="_blank"
+  class="float-btn whatsapp-btn"
+>💬</a>
+
+<!-- ================= ANIMATION ================= -->
 <script>
   const items = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver(entries => {
