@@ -82,10 +82,7 @@ body {
   height: 36px;
 }
 
-.nav-logo span {
-  font-weight: 600;
-  font-size: 18px;
-}
+
 
 /* =========================
    NAV LINKS
@@ -302,3 +299,4 @@ body {
     padding: 2px 0;
   }
 }
+
