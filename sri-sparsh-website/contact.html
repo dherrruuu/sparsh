@@ -5,15 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us | श्री Sparsh LLP</title>
 
+  <!-- CSS -->
   <link rel="stylesheet" href="/css/contact.css" />
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 <header class="navbar">
   <div class="nav-inner">
+
     <div class="nav-logo">
-      <img src="/images/logo.svg" alt="Sri Sparsh LLP">
+      <img src="/images/logo.svg" alt="Sri Sparsh LLP Logo">
       <span>श्री Sparsh LLP</span>
     </div>
 
@@ -23,10 +25,11 @@
       <a href="/products.html">Products</a>
       <a href="/contact.html" class="active">Contact</a>
     </nav>
+
   </div>
 </header>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="contact-hero">
   <h1>Get in Touch</h1>
   <p>
@@ -35,30 +38,25 @@
   </p>
 </section>
 
-<!-- MAP + ADDRESS -->
-<section class="contact-main fade-in">
-  <div class="contact-map-box">
+<!-- ================= MAP + ADDRESS ================= -->
+<section class="map-section">
+
+  <div class="map-box">
 
     <!-- MAP -->
-    <div class="map-embed">
-      <iframe
-        src="https://www.google.com/maps?q=No.%2056/1,%20Adur%20Village,%20Virgonagar%20Post,%20Bidarahalli%20Hobli,%20Bangalore%20East%20Taluk,%20Bangalore%20560049&output=embed"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen=""
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps?q=No.%2056/1,%20Adur%20Village,%20Virgonagar%20Post,%20Bidarahalli%20Hobli,%20Bangalore%20560049&output=embed"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
-
-      
     </div>
 
     <!-- ADDRESS -->
-    <div class="map-details">
-      <h2>📍 Godown Location</h2>
+    <div class="address-box">
+      <h3>📍 Godown Location</h3>
       <p>
-        Sri Sparsh LLP<br>
+        <strong>Sri Sparsh LLP</strong><br>
         No. 56/1, Adur Village,<br>
         Virgonagar Post,<br>
         Bidarahalli Hobli,<br>
@@ -66,10 +64,9 @@
         Bangalore – 560049
       </p>
 
-      <a
-        href="https://maps.app.goo.gl/9h6N5MeRywTrSa3E9"
-        target="_blank"
-        class="map-link">
+      <a 
+        href="https://maps.app.goo.gl/9h6N5MeRywTrSa3E9?g_st=iw" 
+        target="_blank">
         View on Google Maps →
       </a>
     </div>
@@ -77,55 +74,42 @@
   </div>
 </section>
 
-<!-- CONTACT CARDS -->
-<section class="contact-cards fade-in">
-  <div class="contact-grid">
+<!-- ================= CONTACT CARDS ================= -->
+<section class="contact-cards">
 
-    <!-- PHONE -->
-    <a href="tel:+918095670293" class="contact-card">
-      <h3>📞 Phone</h3>
-      <p><strong>Anil :</strong> +91 80956 70293</p>
-      <span>Tap to call →</span>
-    </a>
+  <!-- PHONE -->
+  <a href="tel:+918095670293" class="contact-card">
+    <h3>📞 Phone</h3>
+    <p>Mr. Anil Suthar</p>
+    <p>+91 80956 70293</p>
+    <span>Tap to call →</span>
+  </a>
 
-    <!-- WHATSAPP -->
-    <a
-      href="https://wa.me/918095670293"
-      target="_blank"
-      class="contact-card">
-      <h3>💬 WhatsApp</h3>
-      <p>Chat with us instantly</p>
-      <span>Open WhatsApp →</span>
-    </a>
+  <!-- WHATSAPP -->
+  <a 
+    href="https://wa.me/918095670293" 
+    target="_blank" 
+    class="contact-card">
+    <h3>💬 WhatsApp</h3>
+    <p>Chat with us instantly</p>
+    <span>Open WhatsApp →</span>
+  </a>
 
-    <!-- EMAIL -->
-    <a
-      href="mailto:Info@sparshply.com"
-      class="contact-card">
-      <h3>✉️ Email</h3>
-      <p>Info@sparshply.com</p>
-      <span>Send an email →</span>
-    </a>
+  <!-- EMAIL -->
+  <a 
+    href="mailto:Info@sparshply.com" 
+    class="contact-card">
+    <h3>✉️ Email</h3>
+    <p>Info@sparshply.com</p>
+    <span>Send an email →</span>
+  </a>
 
-  </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
   © 2026 श्री Sparsh LLP. All Rights Reserved.
 </footer>
-
-<!-- FADE IN -->
-<script>
-  const items = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('show');
-    });
-  }, { threshold: 0.2 });
-
-  items.forEach(item => observer.observe(item));
-</script>
 
 </body>
 </html>
