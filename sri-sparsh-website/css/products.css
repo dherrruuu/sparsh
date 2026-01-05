@@ -12,12 +12,11 @@
   box-sizing: border-box;
 }
 
-/* BODY – smooth continuous background */
+/* BODY */
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.7;
   color: #2a1c12;
-
   background: linear-gradient(
     to bottom,
     #2a1c12 0%,
@@ -27,7 +26,9 @@ body {
   );
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
   position: fixed;
   top: 0;
@@ -40,17 +41,32 @@ body {
 .nav-inner {
   max-width: 1200px;
   margin: auto;
-  padding: 16px 24px;
+  padding: 14px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* LOGO FIX */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
 .nav-logo span {
   font-weight: 600;
   font-size: 16px;
+  color: #2a1c12;
 }
 
+/* NAV LINKS */
 .nav-links a {
   margin-left: 26px;
   text-decoration: none;
@@ -70,7 +86,9 @@ body {
   background: var(--gold);
 }
 
-/* HERO */
+/* =========================
+   HERO (PRODUCTS)
+========================= */
 .products-hero {
   min-height: 55vh;
   padding-top: 120px;
@@ -91,7 +109,9 @@ body {
   font-size: 15px;
 }
 
-/* PRODUCTS GRID */
+/* =========================
+   PRODUCTS GRID
+========================= */
 .products-section {
   max-width: 1100px;
   margin: auto;
@@ -105,14 +125,12 @@ body {
 .product-card {
   background: rgba(251,249,246,0.95);
   padding: 30px;
-  border-radius: 4px; /* SHARP, INDUSTRIAL */
+  border-radius: 4px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
 
-
-/* Optional image styling when you add images */
 .product-card img {
   width: 100%;
   border-radius: 2px;
@@ -135,7 +153,25 @@ body {
   box-shadow: 0 22px 45px rgba(0,0,0,0.18);
 }
 
-/* FOOTER */
+/* BUTTON */
+.btn-secondary {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #2a1c12;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  color: var(--gold);
+}
+
+/* =========================
+   FOOTER
+========================= */
 .footer {
   text-align: center;
   padding: 24px;
@@ -148,7 +184,9 @@ body {
   );
 }
 
-/* FADE IN */
+/* =========================
+   FADE IN
+========================= */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -160,24 +198,26 @@ body {
   transform: translateY(0);
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
+
   .products-hero h1 {
     font-size: 30px;
   }
-}
-.btn-secondary {
-  display: inline-block;
-  margin-top: 14px;
-  font-size: 13px;
-  text-decoration: none;
-  color: #2a1c12;
-  border-bottom: 1px solid #c9a44c;
-  padding-bottom: 2px;
-  transition: all 0.3s ease;
+
+  .nav-logo img {
+    height: 34px;
+  }
+
+  .nav-logo span {
+    font-size: 14px;
+  }
+
+  .nav-links a {
+    margin-left: 18px;
+    font-size: 13px;
+  }
 }
 
-.btn-secondary:hover {
-  color: #c9a44c;
-  border-color: #c9a44c;
-}
