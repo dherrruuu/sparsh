@@ -1,32 +1,49 @@
+/* =========================
+   GOOGLE FONT
+========================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
+/* =========================
+   ROOT VARIABLES
+========================= */
 :root {
   --gold: #c9a44c;
+  --dark-brown: #1a120a;
   --text-dark: #2a1c12;
   --text-muted: #5a5046;
+  --card-bg: rgba(251, 249, 246, 0.96);
 }
 
-/* ================= RESET ================= */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* =========================
+   BODY (NAVBAR OFFSET FIX)
+========================= */
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.7;
   color: var(--text-dark);
 
-  /* FIXED NAV OFFSET (CRITICAL) */
+  /* FIXED NAVBAR SPACE */
   padding-top: 84px;
+
+  /* PREVENT MOBILE TEXT RESIZE */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 
   background: linear-gradient(
     to bottom,
     #1a120a 0%,
-    #3b2a1a 22%,
-    #6b4a2d 42%,
-    #c4a583 70%,
+    #3b2a1a 25%,
+    #6b4a2d 45%,
+    #cdb79e 75%,
     #f1ede6 100%
   );
 }
@@ -37,13 +54,16 @@ body {
   }
 }
 
-/* ================= NAVBAR ================= */
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   background: rgba(241, 237, 230, 0.9);
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
   z-index: 1000;
 }
 
@@ -56,6 +76,9 @@ body {
   align-items: center;
 }
 
+/* =========================
+   LOGO
+========================= */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -69,45 +92,87 @@ body {
 .nav-logo span {
   font-weight: 600;
   font-size: 18px;
+  letter-spacing: 0.5px;
+  color: var(--text-dark);
+}
+
+/* =========================
+   NAV LINKS (DESKTOP)
+========================= */
+.nav-links {
+  display: flex;
 }
 
 .nav-links a {
   margin-left: 30px;
-  text-decoration: none;
   font-size: 14px;
+  text-decoration: none;
   color: var(--text-dark);
   position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
 }
 
 .nav-links a.active {
   color: var(--gold);
 }
 
-/* HAMBURGER DEFAULT */
+/* =========================
+   HAMBURGER
+========================= */
 .nav-toggle {
   display: none;
   font-size: 21px;
   cursor: pointer;
+  user-select: none;
+  color: var(--text-dark);
 }
 
-/* ================= MOBILE NAV ================= */
+/* =========================
+   MOBILE NAVBAR
+========================= */
 @media (max-width: 768px) {
 
   .nav-toggle {
     display: block;
   }
 
+  /* LOCK LOGO SIZE */
+  .nav-logo span {
+    font-size: 14px;
+  }
+
   .nav-links {
     position: absolute;
-    top: calc(100% + 4px);
+    top: calc(100% - 5px); /* 🔥 PERFECT ALIGN */
     left: 0;
     width: 100%;
+
     background: rgba(241, 237, 230, 0.99);
+    backdrop-filter: blur(6px);
+
     display: none;
     flex-direction: column;
     align-items: center;
+
     padding: 6px 0;
     gap: 6px;
+
+    border-bottom: 1px solid rgba(0,0,0,0.07);
   }
 
   .nav-links.active {
@@ -115,97 +180,77 @@ body {
   }
 
   .nav-links a {
-    margin: 0;
+    margin-left: 0;
     font-size: 14.5px;
     padding: 2px 0;
   }
 }
 
-/* ================= HERO ================= */
-.about-hero {
-  padding: 80px 20px 90px;
+/* =========================
+   HERO SECTIONS (REUSABLE)
+========================= */
+.hero,
+.about-hero,
+.products-hero,
+.contact-hero {
   text-align: center;
+  padding: 80px 20px 90px;
 }
 
-.about-hero h1 {
-  font-size: 42px;
+.hero h1,
+.about-hero h1,
+.products-hero h1,
+.contact-hero h1 {
+  font-size: 40px;
   color: var(--gold);
 }
 
-.about-hero p {
-  margin-top: 14px;
-  font-size: 16px;
+.hero p,
+.about-hero p,
+.products-hero p,
+.contact-hero p {
+  margin-top: 12px;
   color: #eadfce;
-}
-
-/* ================= CONTENT ================= */
-.about-section {
-  padding: 100px 20px;
-}
-
-.about-container {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.about-text h2 {
-  font-size: 30px;
-  margin-bottom: 16px;
-}
-
-.about-text p {
   font-size: 15px;
-  margin-bottom: 14px;
 }
 
-.about-image img {
-  width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.18);
+/* =========================
+   CARDS (REUSABLE)
+========================= */
+.card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 16px 38px rgba(0,0,0,0.15);
+  transition: all 0.35s ease;
 }
 
-/* ================= VALUES ================= */
-.values-grid {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 34px;
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 55px rgba(0,0,0,0.22);
 }
 
-.value-card {
-  background: rgba(251,249,246,0.96);
-  padding: 34px;
-  border-radius: 18px;
-}
-
-/* ================= LIST ================= */
-.about-list {
-  max-width: 820px;
-  margin: auto;
-  padding-left: 20px;
-}
-
-/* ================= FOOTER ================= */
-.footer {
-  background: #1a120a;
-  color: #d8cfc4;
-  text-align: center;
-  padding: 28px;
-}
-
-/* ================= FADE ================= */
+/* =========================
+   FADE IN ANIMATION
+========================= */
 .fade-in {
   opacity: 0;
   transform: translateY(40px);
-  transition: 0.9s ease;
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background: #1a120a;
+  color: #d8cfc4;
+  text-align: center;
+  padding: 26px;
+  font-size: 14px;
 }
