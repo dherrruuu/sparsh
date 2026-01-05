@@ -254,6 +254,42 @@ body {
     font-size: 32px;
   }
 }
+@media (max-width: 768px) {
+
+  .nav-toggle {
+    display: block;
+    font-size: 21px; /* smallest comfortable size */
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% - 4px); /* pulls menu closer to navbar */
+    left: 0;
+    width: 100%;
+
+    background: rgba(241, 237, 230, 0.99);
+    backdrop-filter: blur(6px);
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 6px 0; /* 🔥 minimal height */
+    gap: 6px;       /* 🔥 tight spacing */
+
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 14.5px;
+    padding: 2px 0; /* 🔥 ultra-compact */
+  }
+}
+
 
 
 
