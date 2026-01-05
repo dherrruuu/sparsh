@@ -1,141 +1,233 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+/* =========================
+   GOOGLE FONT
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
+/* =========================
+   ROOT VARIABLES (BRAND)
+========================= */
 :root {
+  --dark-brown: #1a120a;
+  --mid-brown: #3b2a1a;
+  --wood-brown: #6b4a2d;
   --gold: #c9a44c;
-  --text-dark: #2a1c12;
+  --cream: #f1ede6;
+  --soft-white: #fbf9f6;
+  --text-dark: #1a120a;
+  --text-muted: #6f6a64;
 }
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* BODY OFFSET (FIXED HEIGHT) */
+/* =========================
+   RESET (PAGE ONLY)
+========================= */
 body {
   font-family: 'Poppins', sans-serif;
-  padding-top: 84px;
-  -webkit-text-size-adjust: 100%;
+  line-height: 1.7;
+  color: var(--text-dark);
+
+  /* background matches brand */
+  background: linear-gradient(
+    to bottom,
+    #1a120a 0%,
+    #3b2a1a 18%,
+    #6b4a2d 36%,
+    #a67c52 55%,
+    #d6c3aa 75%,
+    #f1ede6 100%
+  );
 }
 
-@media (max-width: 768px) {
-  body {
-    padding-top: 72px;
-  }
+/* =========================
+   HERO
+========================= */
+.about-hero {
+  text-align: center;
+  padding: 80px 20px 90px;
 }
 
-/* NAVBAR */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(241, 237, 230, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  z-index: 1000;
-}
-
-.nav-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 18px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* LOGO */
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.nav-logo img {
-  height: 36px;
-}
-
-.nav-logo span {
+.about-hero h1 {
+  font-size: 40px;
   font-weight: 600;
-  font-size: 18px;
-  color: var(--text-dark);
-  white-space: nowrap;   /* 🔒 prevents wrapping */
-}
-
-/* LINKS DESKTOP */
-.nav-links {
-  display: flex;
-}
-
-.nav-links a {
-  margin-left: 30px;
-  font-size: 14px;
-  text-decoration: none;
-  color: var(--text-dark);
-  position: relative;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: var(--gold);
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
-}
-
-.nav-links a.active {
   color: var(--gold);
 }
 
-/* HAMBURGER */
-.nav-toggle {
-  display: none;
-  font-size: 21px;
-  cursor: pointer;
+.about-hero p {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #eadfce;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* MOBILE */
+/* =========================
+   ABOUT SECTION
+========================= */
+.about-section {
+  padding: 95px 20px;
+}
+
+.about-container {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* TEXT */
+.about-text h2 {
+  font-size: 30px;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.about-text p {
+  font-size: 15px;
+  color: #4f453c;
+  margin-bottom: 18px;
+}
+
+/* IMAGE */
+.about-image img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   VALUES SECTION
+========================= */
+.about-values {
+  padding: 95px 20px;
+}
+
+.section-gradient {
+  background: rgba(251, 249, 246, 0.92);
+  backdrop-filter: blur(6px);
+}
+
+.values-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+}
+
+/* VALUE CARD */
+.value-card {
+  background: var(--soft-white);
+  padding: 34px;
+  border-radius: 16px;
+  box-shadow: 0 16px 38px rgba(0,0,0,0.12);
+  transition: all 0.35s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 55px rgba(0,0,0,0.18);
+}
+
+.value-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--gold);
+}
+
+.value-card p {
+  font-size: 14.5px;
+  color: #5a5046;
+}
+
+/* =========================
+   WHY CHOOSE SECTION
+========================= */
+.about-section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 36px;
+  color: var(--gold);
+}
+
+.about-list {
+  max-width: 720px;
+  margin: auto;
+  list-style: none;
+}
+
+.about-list li {
+  font-size: 15px;
+  color: #4f453c;
+  padding: 12px 0;
+  padding-left: 26px;
+  position: relative;
+}
+
+/* GOLD BULLET */
+.about-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 22px;
+  color: var(--gold);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background: linear-gradient(
+    to bottom,
+    rgba(26,18,10,0.6),
+    #1a120a
+  );
+  color: #d8cfc4;
+  text-align: center;
+  padding: 28px;
+  font-size: 14px;
+}
+
+/* =========================
+   FADE-IN ANIMATION
+========================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
-
-  .nav-toggle {
-    display: block;
+  .about-hero h1 {
+    font-size: 34px;
   }
 
-  /* 🔒 LOCK BRAND SIZE (NO CHANGE BETWEEN PAGES) */
-  .nav-logo span {
-    font-size: 14px;
+  .about-text h2 {
+    font-size: 26px;
   }
 
-  .nav-links {
-    position: absolute;
-    top: calc(100% - 5px);
-    left: 0;
-    width: 100%;
-    background: rgba(241, 237, 230, 0.99);
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    padding: 6px 0;
-    gap: 6px;
-    border-bottom: 1px solid rgba(0,0,0,0.07);
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links a {
-    margin-left: 0;
-    font-size: 14.5px;
-    padding: 2px 0;
+  .about-section {
+    padding: 75px 20px;
   }
 }
