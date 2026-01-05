@@ -162,9 +162,15 @@ body {
    VALUES
 ========================= */
 .section-gradient {
-  background: rgba(251, 249, 246, 0.9);
+  background: linear-gradient(
+    to bottom,
+    rgba(26,18,10,0.25),
+    rgba(59,42,26,0.35)
+  );
+  backdrop-filter: blur(4px);
   padding: 80px 20px;
 }
+
 
 .values-grid {
   max-width: 1200px;
@@ -245,3 +251,46 @@ body {
     margin-left: 16px;
   }
 }
+/* ===== CONTRAST FIXES ===== */
+
+/* Hero section (dark background) */
+.about-hero h1 {
+  color: var(--gold);
+}
+
+.about-hero p {
+  color: #eadfce;
+}
+
+/* About text on mid-brown */
+.about-text h2 {
+  color: #f1ede6;
+}
+
+.about-text p {
+  color: #e0d5c6;
+}
+
+/* Value cards (light cards) */
+.value-card h3 {
+  color: var(--dark-brown);
+}
+
+.value-card p {
+  color: #5a5046;
+}
+
+/* Why choose us list */
+.about-section h2 {
+  color: var(--gold);
+}
+
+.about-list li {
+  color: #eadfce;
+}
+
+/* Footer already dark */
+.footer {
+  color: #d8cfc4;
+}
+
