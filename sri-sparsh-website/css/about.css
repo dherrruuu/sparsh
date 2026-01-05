@@ -1,51 +1,22 @@
-/* =========================
-   GOOGLE FONT
-========================= */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-/* =========================
-   ROOT VARIABLES
-========================= */
 :root {
   --gold: #c9a44c;
-  --dark-brown: #1a120a;
   --text-dark: #2a1c12;
-  --text-muted: #5a5046;
-  --card-bg: rgba(251, 249, 246, 0.96);
 }
 
-/* =========================
-   RESET
-========================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   BODY (NAVBAR OFFSET FIX)
-========================= */
+/* BODY OFFSET (FIXED HEIGHT) */
 body {
   font-family: 'Poppins', sans-serif;
-  line-height: 1.7;
-  color: var(--text-dark);
-
-  /* FIXED NAVBAR SPACE */
   padding-top: 84px;
-
-  /* PREVENT MOBILE TEXT RESIZE */
   -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-
-  background: linear-gradient(
-    to bottom,
-    #1a120a 0%,
-    #3b2a1a 25%,
-    #6b4a2d 45%,
-    #cdb79e 75%,
-    #f1ede6 100%
-  );
 }
 
 @media (max-width: 768px) {
@@ -54,14 +25,12 @@ body {
   }
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(241, 237, 230, 0.9);
+  background: rgba(241, 237, 230, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0,0,0,0.06);
   z-index: 1000;
@@ -76,9 +45,7 @@ body {
   align-items: center;
 }
 
-/* =========================
-   LOGO
-========================= */
+/* LOGO */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -92,13 +59,11 @@ body {
 .nav-logo span {
   font-weight: 600;
   font-size: 18px;
-  letter-spacing: 0.5px;
   color: var(--text-dark);
+  white-space: nowrap;   /* 🔒 prevents wrapping */
 }
 
-/* =========================
-   NAV LINKS (DESKTOP)
-========================= */
+/* LINKS DESKTOP */
 .nav-links {
   display: flex;
 }
@@ -131,47 +96,36 @@ body {
   color: var(--gold);
 }
 
-/* =========================
-   HAMBURGER
-========================= */
+/* HAMBURGER */
 .nav-toggle {
   display: none;
   font-size: 21px;
   cursor: pointer;
-  user-select: none;
-  color: var(--text-dark);
 }
 
-/* =========================
-   MOBILE NAVBAR
-========================= */
+/* MOBILE */
 @media (max-width: 768px) {
 
   .nav-toggle {
     display: block;
   }
 
-  /* LOCK LOGO SIZE */
+  /* 🔒 LOCK BRAND SIZE (NO CHANGE BETWEEN PAGES) */
   .nav-logo span {
     font-size: 14px;
   }
 
   .nav-links {
     position: absolute;
-    top: calc(100% - 5px); /* 🔥 PERFECT ALIGN */
+    top: calc(100% - 5px);
     left: 0;
     width: 100%;
-
     background: rgba(241, 237, 230, 0.99);
-    backdrop-filter: blur(6px);
-
     display: none;
     flex-direction: column;
     align-items: center;
-
     padding: 6px 0;
     gap: 6px;
-
     border-bottom: 1px solid rgba(0,0,0,0.07);
   }
 
@@ -184,73 +138,4 @@ body {
     font-size: 14.5px;
     padding: 2px 0;
   }
-}
-
-/* =========================
-   HERO SECTIONS (REUSABLE)
-========================= */
-.hero,
-.about-hero,
-.products-hero,
-.contact-hero {
-  text-align: center;
-  padding: 80px 20px 90px;
-}
-
-.hero h1,
-.about-hero h1,
-.products-hero h1,
-.contact-hero h1 {
-  font-size: 40px;
-  color: var(--gold);
-}
-
-.hero p,
-.about-hero p,
-.products-hero p,
-.contact-hero p {
-  margin-top: 12px;
-  color: #eadfce;
-  font-size: 15px;
-}
-
-/* =========================
-   CARDS (REUSABLE)
-========================= */
-.card {
-  background: var(--card-bg);
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 16px 38px rgba(0,0,0,0.15);
-  transition: all 0.35s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 26px 55px rgba(0,0,0,0.22);
-}
-
-/* =========================
-   FADE IN ANIMATION
-========================= */
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================
-   FOOTER
-========================= */
-.footer {
-  background: #1a120a;
-  color: #d8cfc4;
-  text-align: center;
-  padding: 26px;
-  font-size: 14px;
 }
