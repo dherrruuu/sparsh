@@ -231,3 +231,10 @@ body {
     padding: 75px 20px;
   }
 }
+.about-text {
+  background: rgba(251, 249, 246, 0.9);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+}
+
