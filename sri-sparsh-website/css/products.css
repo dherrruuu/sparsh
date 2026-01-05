@@ -64,21 +64,7 @@ body {
   align-items: center;
 }
 
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
 
-.nav-logo img {
-  height: 36px;
-}
-
-.nav-logo span {
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-}
 
 /* =========================
    NAV LINKS
@@ -288,3 +274,4 @@ body {
     padding: 2px 0;
   }
 }
+
