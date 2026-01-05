@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Our Products | श्री Sparsh LLP</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/products.css" />
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="nav-inner">
+
+    <div class="nav-logo">
+      <img src="/images/logo.svg" alt="Sri Sparsh LLP Logo">
+      <span>श्री Sparsh LLP</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/products.html" class="active">Products</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= PAGE HERO ================= -->
+<section class="products-hero">
+  <h1>Our Products</h1>
+  <p>Designed for strength, precision, and lasting performance.</p>
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+<section class="products-section">
+
+  <!-- Sparsh Basic -->
+  <div class="product-card fade-in">
+    <img src="/images/basic.jpeg" alt="Sparsh Basic Plywood">
+    <h3>Sparsh Basic</h3>
+    <p>Reliable commercial plywood for everyday interior applications.</p>
+    <a href="/products-detail/basic.html" class="btn-secondary">
+      Know More →
+    </a>
+  </div>
+
+  <!-- Super 16 -->
+  <div class="product-card fade-in">
+    <img src="/images/Super16.jpeg" alt="Sparsh Super 16">
+    <h3>Sparsh Super 16</h3>
+    <p>Enhanced strength plywood with superior durability.</p>
+    <a href="/products-detail/super16.html" class="btn-secondary">
+      Know More →
+    </a>
+  </div>
+
+  <!-- Calibrated -->
+  <div class="product-card fade-in">
+    <img src="/images/calibrated.jpeg" alt="Sparsh Calibrated">
+    <h3>Sparsh Calibrated</h3>
+    <p>Precision-calibrated plywood for uniform thickness and finish.</p>
+    <a href="/products-detail/calibrated.html" class="btn-secondary">
+      Know More →
+    </a>
+  </div>
+
+  <!-- H2O -->
+  <div class="product-card fade-in">
+    <img src="/images/H20.jpeg" alt="Sparsh H2O">
+    <h3>Sparsh H2O</h3>
+    <p>Boiling Water Proof plywood for moisture-prone environments.</p>
+    <a href="/products-detail/h2o.html" class="btn-secondary">
+      Know More →
+    </a>
+  </div>
+
+  <!-- Brahmastra -->
+  <div class="product-card fade-in">
+    <img src="/images/sparsh-brahmastra.jpg" alt="Sparsh Brahmastra">
+    <h3>Sparsh Brahmastra</h3>
+    <p>Premium-grade plywood crafted for superior performance.</p>
+    <a href="/products-detail/brahmastra.html" class="btn-secondary">
+      Know More →
+    </a>
+  </div>
+
+  <!-- Shuttering -->
+  <div class="product-card fade-in">
+    <img src="/images/Shuttering.jpeg" alt="Shuttering Plywood">
+    <h3>Shuttering Plywood</h3>
+    <p>High-strength plywood suitable for construction and formwork use.</p>
+    <a href="/products-detail/shuttering.html" class="btn-secondary">
+      Know More →
+    </a>
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  © 2026 श्री Sparsh LLP. All Rights Reserved.
+</footer>
+
+<!-- ================= SCROLL ANIMATION ================= -->
+<script>
+  const items = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  items.forEach(item => observer.observe(item));
+</script>
+
+</body>
+</html>

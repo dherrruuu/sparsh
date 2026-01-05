@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Contact Us | श्री Sparsh LLP</title>
+
+  <link rel="stylesheet" href="/css/contact.css" />
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="nav-inner">
+
+    <div class="nav-logo">
+      <img src="/images/logo.svg" alt="Sri Sparsh LLP Logo">
+      <span>श्री Sparsh LLP</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/products.html">Products</a>
+      <a href="/contact.html" class="active">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="contact-hero">
+  <h1>Contact Us</h1>
+  <p>We’re here to help you with premium plywood solutions.</p>
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="contact-section fade-in">
+
+  <div class="contact-grid">
+
+    <!-- CONTACT INFO -->
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+
+      <p>
+        Have questions about our products or need assistance?
+        Reach out to us — we’ll be happy to help.
+      </p>
+
+      <div class="info-item">
+        <strong>📍 Godown Location</strong>
+        <p>Sri Sparsh LLP, India</p>
+      </div>
+
+      <div class="info-item">
+        <strong>📞 Phone</strong>
+        <p>
+          <a href="tel:+918095670293">+91 8095670293</a>
+        </p>
+      </div>
+
+      <div class="info-item">
+        <strong>✉️ Email</strong>
+        <p>
+          <a href="mailto:Info@sparshply.com">Info@sparshply.com</a>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- MAP -->
+    <div class="contact-map">
+      <iframe
+        src="https://www.google.com/maps?q=9h6N5MeRywTrSa3E9&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  © 2026 श्री Sparsh LLP. All Rights Reserved.
+</footer>
+
+<!-- ================= ANIMATION SCRIPT ================= -->
+<script>
+  const items = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  items.forEach(item => observer.observe(item));
+</script>
+
+</body>
+</html>

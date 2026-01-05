@@ -1,0 +1,230 @@
+/* =========================
+   GOOGLE FONT
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+  --dark: #1a140f;
+  --brown: #2a1f18;
+  --gold: #c9a44c;
+  --light: #f2efe9;
+  --text: #e8e4dc;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, var(--dark), var(--light));
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(26, 20, 15, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-brand img {
+  height: 38px;
+}
+
+.nav-brand span {
+  font-weight: 600;
+  color: var(--gold);
+  font-size: 16px;
+}
+
+nav a {
+  margin-left: 28px;
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--text);
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* =========================
+   PRODUCT DETAIL LAYOUT
+========================= */
+.product-detail {
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 24px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+.product-image {
+  overflow: hidden;
+  border-radius: 0; /* sharp edges */
+}
+
+.product-image img {
+  width: 100%;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.product-image:hover img {
+  transform: scale(1.12);
+}
+
+/* =========================
+   PRODUCT INFO
+========================= */
+.product-info h1 {
+  font-size: 38px;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-style: italic;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+.description {
+  font-size: 15px;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   DETAILS
+========================= */
+.extra-details h3 {
+  color: var(--gold);
+  margin: 25px 0 10px;
+  font-size: 18px;
+}
+
+.extra-details ul {
+  list-style: none;
+}
+
+.extra-details li {
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #e0dbd2;
+}
+
+.extra-details li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+/* =========================
+   CTA BUTTON
+========================= */
+.cta-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 36px;
+  background: var(--gold);
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .product-detail {
+    grid-template-columns: 1fr;
+    padding-top: 80px;
+  }
+
+  .product-info h1 {
+    font-size: 30px;
+  }
+}
+/* ================= Breadcrumb ================= */
+.breadcrumb {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #444;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb .current {
+  color: #000;
+  font-weight: 500;
+}
