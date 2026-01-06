@@ -202,7 +202,6 @@ body {
     rgba(107,74,45,0.15)
   );
 }
-}
 
 .values-grid {
   max-width: 1100px;
@@ -272,4 +271,5 @@ body {
     display: flex;
   }
 }
+
 
