@@ -110,116 +110,97 @@ body {
 /* =========================
    WHO WE ARE
 ========================= */
+/* =========================
+   ABOUT PAGE BACKGROUND FIX
+========================= */
 .about-section {
-  padding: 100px 20px;
-}
-
-.about-container {
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
-}
-
-.about-text {
-  background: rgba(251, 249, 246, 0.95);
-  padding: 45px;
-  border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-}
-
-.about-text h2 {
-  color: var(--gold);
-  font-size: 28px;
-  margin-bottom: 16px;
-}
-
-.about-text p {
-  color: #4f453c;
-  font-size: 15px;
-}
-
-.about-image img {
-  width: 100%;
-  display: block;
-  border-radius: 0; /* sharp */
+  padding: 90px 20px;
+  background: linear-gradient(
+    to bottom,
+    #5a3b22 0%,
+    #7a5536 30%,
+    #a57c57 55%,
+    #d4bfa7 80%,
+    #f1ede6 100%
+  );
 }
 
 /* =========================
    VISION / MISSION / VALUES
 ========================= */
-.info-section {
-  padding: 110px 20px;
-}
-
-.info-grid {
-  max-width: 1100px;
-  margin: auto;
+.vision-mission-container {
+  max-width: 1200px;
+  margin: 0 auto 100px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
 }
 
 .info-card {
-  background: rgba(255, 255, 255, 0.96);
-  padding: 40px 32px;
+  background: #ffffff;
   border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  padding: 36px 28px;
   text-align: center;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.info-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 28px 55px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  transition: all 0.35s ease;
 }
 
 .info-card h3 {
-  color: var(--gold);
+  font-size: 20px;
   margin-bottom: 14px;
+  color: #2a1c12;
 }
 
 .info-card p {
-  color: #4f453c;
-  font-size: 14px;
+  font-size: 15px;
+  color: #5a5046;
+  line-height: 1.6;
 }
 
+/* HOVER EFFECT */
+.info-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 28px 55px rgba(0,0,0,0.18);
+}
 
 /* =========================
-   WHY CHOOSE (CENTERED)
+   WHY CHOOSE SPARSH
 ========================= */
-.why-choose {
-  padding: 120px 20px;
+.why-sparsh {
+  max-width: 900px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.why-choose-container {
-  max-width: 900px;
-  margin: auto;
-  background: rgba(255, 255, 255, 0.97);
-  padding: 60px 50px;
-  border-radius: 20px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+.why-sparsh h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #2a1c12;
 }
 
-.why-choose-container h2 {
-  color: var(--gold);
-  margin-bottom: 25px;
-}
-
-.why-choose-container ul {
+.why-sparsh ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-.why-choose-container li {
+.why-sparsh li {
+  font-size: 16px;
   margin-bottom: 14px;
-  color: #4f453c;
-  font-size: 15px;
+  color: #4a4036;
+  position: relative;
+  padding-left: 22px;
 }
+
+.why-sparsh li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #c9a44c;
+  font-size: 22px;
+}
+
+
+
 
 /* =========================
    FOOTER
@@ -235,13 +216,17 @@ body {
 /* =========================
    RESPONSIVE
 ========================= */
-@media (max-width: 900px) {
-  .about-container {
-    grid-template-columns: 1fr;
+/* =========================
+   MOBILE FIX
+========================= */
+@media (max-width: 768px) {
+  .info-card {
+    padding: 28px 22px;
   }
 
-  .about-hero h1 {
-    font-size: 34px;
+  .why-sparsh h2 {
+    font-size: 26px;
   }
 }
+
 
