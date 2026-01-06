@@ -36,6 +36,75 @@ body {
     #f1ede6 100%
   );
 }
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(241, 237, 230, 0.82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  z-index: 1000;
+  transition: all 0.35s ease;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* =========================
+   NAV LINKS
+========================= */
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  margin-left: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--text-dark);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--gold);
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+  color: var(--text-dark);
+  user-select: none;
+}
 
 /* =========================
    HERO
@@ -237,4 +306,5 @@ body {
   border-radius: 16px;
   box-shadow: 0 14px 32px rgba(0,0,0,0.12);
 }
+
 
