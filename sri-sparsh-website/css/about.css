@@ -109,6 +109,10 @@ body {
   font-size: 15.5px;
   margin-bottom: 14px;
 }
+/* FORCE GOLD COLOR FOR "WHO WE ARE" */
+.about-text h2 {
+  color: #c9a44c !important;
+}
 
 /* =========================
    VALUES (WHITE CARDS)
@@ -232,3 +236,4 @@ body {
     font-size: 34px;
   }
 }
+
