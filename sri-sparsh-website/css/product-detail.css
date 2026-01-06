@@ -34,16 +34,18 @@ body {
   line-height: 1.7;
   color: var(--text-dark);
 
+  /* Matte wood finish — no white reflection */
   background: linear-gradient(
     to bottom,
     #1a120a 0%,
-    #3b2a1a 20%,
-    #6b4a2d 42%,
-    #8b6a4a 62%,
-    #cbb59b 82%,
-    #e6dccf 100%
+    #2a1d13 22%,
+    #4a3422 44%,
+    #6b4a2d 65%,
+    #7a5a3c 82%,
+    #6b4a2d 100%
   );
 }
+
 
 
 /* =========================
@@ -251,4 +253,5 @@ nav a.active::after {
     font-size: 30px;
   }
 }
+
 
