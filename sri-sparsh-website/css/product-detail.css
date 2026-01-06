@@ -13,7 +13,7 @@
   --gold: #c9a44c;
   --cream: #f1ede6;
   --soft-white: #fbf9f6;
-  --text-dark: #1a120a;
+  --text-dark: #2a1c12;
   --text-muted: #6f6a64;
 }
 
@@ -33,11 +33,8 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.7;
   color: var(--text-dark);
-
-  /* offset for fixed navbar */
   padding-top: 84px;
 
-  /* warm wood gradient – NO white reflection */
   background: linear-gradient(
     to bottom,
     #1a120a 0%,
@@ -55,21 +52,23 @@ body {
 }
 
 /* =========================
-   NAVBAR (PINNED)
+   NAVBAR (LIGHT & PINNED)
 ========================= */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(26, 18, 10, 0.92);
-  backdrop-filter: blur(8px);
+  background: rgba(241, 237, 230, 0.82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
   z-index: 1000;
+  transition: all 0.35s ease;
 }
 
 .nav-inner {
   max-width: 1200px;
   margin: auto;
-  padding: 16px 24px;
+  padding: 18px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -102,18 +101,18 @@ body {
 }
 
 .nav-links a {
-  margin-left: 28px;
+  margin-left: 30px;
   text-decoration: none;
   font-size: 14px;
-  color: var(--cream);
+  color: var(--text-dark);
   position: relative;
 }
 
 .nav-links a::after {
   content: "";
   position: absolute;
-  left: 0;
   bottom: -6px;
+  left: 0;
   width: 0;
   height: 2px;
   background: var(--gold);
@@ -130,13 +129,13 @@ body {
 }
 
 /* =========================
-   HAMBURGER (GOLDEN)
+   HAMBURGER (DARK, SAME AS LINKS)
 ========================= */
 .nav-toggle {
   display: none;
   cursor: pointer;
   font-size: 22px;
-  color: var(--gold);
+  color: var(--text-dark);
   user-select: none;
 }
 
@@ -156,10 +155,6 @@ body {
   color: var(--gold);
 }
 
-.breadcrumb a:hover {
-  text-decoration: underline;
-}
-
 .breadcrumb .current {
   color: #9b7a2e;
   font-weight: 500;
@@ -171,7 +166,7 @@ body {
 .product-detail {
   max-width: 1200px;
   margin: auto;
-  padding: 90px 24px 90px;
+  padding: 90px 24px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -179,11 +174,10 @@ body {
 }
 
 /* =========================
-   PRODUCT IMAGE
+   PRODUCT IMAGE (SHARP CORNERS)
 ========================= */
 .product-image {
   overflow: hidden;
-  border-radius: 16px;
 }
 
 .product-image img {
@@ -278,11 +272,6 @@ body {
 @media (max-width: 900px) {
   .product-detail {
     grid-template-columns: 1fr;
-    padding-top: 70px;
-  }
-
-  .product-info h1 {
-    font-size: 30px;
   }
 }
 
@@ -297,12 +286,11 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(26, 18, 10, 0.97);
+    background: rgba(241, 237, 230, 0.97);
     display: none;
     flex-direction: column;
     align-items: center;
     padding: 10px 0;
-    gap: 8px;
   }
 
   .nav-links.active {
