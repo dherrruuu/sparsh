@@ -1,106 +1,66 @@
 /* =========================
-   GOOGLE FONT
-========================= */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
-/* =========================
-   ROOT VARIABLES
-========================= */
-:root {
-  --dark-brown: #1a120a;
-  --mid-brown: #3b2a1a;
-  --wood-brown: #6b4a2d;
-  --gold: #c9a44c;
-  --cream: #f1ede6;
-  --soft-white: #fbf9f6;
-  --text-dark: #1a120a;
-  --text-muted: #6f6a64;
-}
-
-/* =========================
-   RESET
+   GLOBAL RESET
 ========================= */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* =========================
-   BODY (NO GRADIENT HERE)
-========================= */
 body {
-  background: var(--cream);
-  color: var(--text-dark);
-  line-height: 1.7;
+  font-family: "Segoe UI", sans-serif;
+  background: #f4efe9;
+  color: #2b2b2b;
+  line-height: 1.6;
 }
 
 /* =========================
-   NAVBAR (PINNED)
+   HEADER / NAVBAR
 ========================= */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(241, 237, 230, 0.88);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  z-index: 1000;
+header {
+  background: #e8e1d8;
+  border-bottom: 1px solid #ddd;
 }
 
-.nav-inner {
+.navbar {
   max-width: 1200px;
   margin: auto;
-  padding: 18px 25px;
+  padding: 14px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* LOGO */
-.nav-logo {
+.logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 20px;
 }
 
-.nav-logo img {
-  height: 36px;
-}
-
-/* =========================
-   NAV LINKS + HOVER (FIXED)
-========================= */
 .nav-links a {
-  margin-left: 30px;
+  margin-left: 25px;
   text-decoration: none;
-  font-size: 14px;
-  color: var(--text-dark);
+  color: #333;
+  font-weight: 500;
   position: relative;
-  transition: color 0.25s ease, transform 0.25s ease;
+  transition: color 0.3s ease;
 }
 
 .nav-links a::after {
   content: "";
   position: absolute;
-  bottom: -6px;
   left: 0;
-  width: 0;
+  bottom: -6px;
+  width: 0%;
   height: 2px;
-  background: var(--gold);
+  background: #c89b3c;
   transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: var(--gold);
-  transform: translateY(-1px);
+  color: #c89b3c;
 }
 
 .nav-links a:hover::after,
@@ -108,170 +68,185 @@ body {
   width: 100%;
 }
 
-.nav-links a.active {
-  color: var(--gold);
-}
-
 /* =========================
-   HAMBURGER
-========================= */
-.nav-toggle {
-  display: none;
-  cursor: pointer;
-  color: var(--gold);
-}
-
-/* =========================
-   HERO (ONLY PLACE WITH GRADIENT)
+   HERO / ABOUT BANNER
 ========================= */
 .about-hero {
-  width: 100%;
-  padding: 140px 20px 80px;
+  position: relative;
+  background: linear-gradient(180deg, #5c3b1e, #8b5e34);
+  color: #fff;
+  padding: 80px 20px;
   text-align: center;
-  background: linear-gradient(
-    to bottom,
-    #1a120a 0%,
-    #3b2a1a 35%,
-    #6b4a2d 70%,
-    #a67c52 100%
-  );
+  overflow: hidden;
+}
+
+/* prevents background flash */
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  z-index: -1;
 }
 
 .about-hero h1 {
-  font-size: 40px;
-  font-weight: 600;
-  color: var(--gold);
+  font-size: 42px;
+  color: #e2b14a;
+  margin-bottom: 10px;
 }
 
 .about-hero p {
-  margin-top: 12px;
-  font-size: 15px;
-  color: #eadfce;
-  max-width: 650px;
-  margin-inline: auto;
+  font-size: 18px;
+  opacity: 0.95;
 }
 
 /* =========================
-   ABOUT SECTION (WHITE ONLY)
+   WHO WE ARE SECTION
 ========================= */
-.about-section {
-  padding: 90px 20px;
-  background: var(--cream);
-}
-
-.about-container {
-  max-width: 1150px;
-  margin: auto;
+.about-main {
+  max-width: 1200px;
+  margin: 70px auto;
+  padding: 0 20px;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
-  align-items: center;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
 }
 
-/* TEXT CARD */
-.about-text {
-  background: var(--soft-white);
-  padding: 32px;
+.about-card {
+  background: #fffaf4;
+  padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.about-text h2 {
-  font-size: 30px;
-  color: var(--gold);
-  margin-bottom: 16px;
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
 }
 
-.about-text p {
-  font-size: 15px;
-  color: #4f453c;
+.about-card h2 {
+  color: #c89b3c;
+  font-size: 28px;
+  margin-bottom: 15px;
 }
 
-/* IMAGE */
+.about-card p {
+  margin-bottom: 12px;
+}
+
+/* =========================
+   IMAGE BLOCK
+========================= */
+.about-image {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
 .about-image img {
   width: 100%;
-  border-radius: 0;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.06);
+}
+
+.about-image:hover::after {
+  opacity: 1;
 }
 
 /* =========================
-   VALUES SECTION (NO GRADIENT BLEED)
+   FEATURE CARDS
 ========================= */
-.about-values {
-  padding: 90px 20px;
-  background: var(--cream);
-}
-
-.values-grid {
-  max-width: 1100px;
-  margin: auto;
+.features {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 34px;
+  gap: 25px;
 }
 
-.value-card {
-  background: var(--soft-white);
-  padding: 34px;
-  border-radius: 16px;
-  box-shadow: 0 16px 38px rgba(0,0,0,0.12);
+.feature-card {
+  background: #fffaf4;
+  padding: 30px;
+  border-radius: 14px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
-.value-card h3 {
-  color: var(--gold);
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #c89b3c, #8b5e34);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 0;
+}
+
+.feature-card * {
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.feature-card:hover {
+  color: #fff;
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+/* =========================
+   WHY CHOOSE SECTION
+========================= */
+.why-choose {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.why-choose h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.why-choose ul {
+  padding-left: 20px;
+}
+
+.why-choose li {
   margin-bottom: 10px;
 }
 
 /* =========================
    FOOTER
 ========================= */
-.footer {
-  background: linear-gradient(
-    to bottom,
-    rgba(26,18,10,0.7),
-    #1a120a
-  );
-  color: #d8cfc4;
+footer {
+  background: linear-gradient(180deg, #2b1a0f, #000);
+  color: #eee;
   text-align: center;
-  padding: 28px;
-  font-size: 14px;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 900px) {
-  .about-container {
-    grid-template-columns: 1fr;
-  }
-
-  .values-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgba(241,237,230,0.98);
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 0;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links a {
-    margin: 12px 0;
-  }
+  padding: 25px 10px;
+  margin-top: 80px;
 }
