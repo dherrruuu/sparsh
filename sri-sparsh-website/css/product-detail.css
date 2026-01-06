@@ -1,12 +1,20 @@
+/* =========================
+   GOOGLE FONT
+========================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 /* =========================
    ROOT VARIABLES
 ========================= */
 :root {
+  --dark: #1a120a;
+  --mid-brown: #3b2a1a;
+  --wood-brown: #6b4a2d;
   --gold: #c9a44c;
-  --dark-brown: #1a120a;
-  --text-dark: #2a1c12;
+  --cream: #f1ede6;
+  --soft-white: #fbf9f6;
+  --text-dark: #1a120a;
+  --text-muted: #6f6a64;
 }
 
 /* =========================
@@ -19,71 +27,77 @@
 }
 
 /* =========================
-   BODY
+   BODY (WOOD BACKGROUND)
 ========================= */
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.7;
   color: var(--text-dark);
-  padding-top: 84px;
+
   background: linear-gradient(
     to bottom,
-    #2a1c12 0%,
-    #4a3322 35%,
-    #6b4a30 70%,
-    #3a2617 100%
+    #1a120a 0%,
+    #2a1d13 22%,
+    #4a3422 44%,
+    #6b4a2d 65%,
+    #7a5a3c 82%,
+    #6b4a2d 100%
   );
 }
 
-@media (max-width: 768px) {
-  body {
-    padding-top: 72px;
-  }
-}
-
 /* =========================
-   NAVBAR
+   NAVBAR (NOT PINNED)
 ========================= */
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(241, 237, 230, 0.82);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+  background: rgba(26, 18, 10, 0.95);
+  backdrop-filter: blur(8px);
   z-index: 1000;
-  transition: all 0.35s ease;
 }
 
-.nav-inner {
+.nav-container {
   max-width: 1200px;
   margin: auto;
-  padding: 18px 25px;
+  padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* =========================
-   NAV LINKS
-========================= */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-brand img {
+  height: 38px;
+}
+
+.nav-brand span {
+  font-weight: 600;
+  color: var(--gold);
+  font-size: 16px;
+}
+
+/* NAV LINKS */
 .nav-links {
   display: flex;
 }
 
 .nav-links a {
-  margin-left: 30px;
+  margin-left: 28px;
   text-decoration: none;
   font-size: 14px;
-  color: var(--text-dark);
+  color: var(--cream);
   position: relative;
 }
 
 .nav-links a::after {
   content: "";
   position: absolute;
-  bottom: -6px;
   left: 0;
+  bottom: -6px;
   width: 0;
   height: 2px;
   background: var(--gold);
@@ -95,145 +109,156 @@ body {
   width: 100%;
 }
 
-.nav-links a.active {
-  color: var(--gold);
-}
-
 /* =========================
-   HAMBURGER (FIXED & GOLD)
+   HAMBURGER (GOLD)
 ========================= */
 .nav-toggle {
   display: none;
+  font-size: 28px;
   cursor: pointer;
   color: var(--gold);
-  font-size: 22px;
   user-select: none;
 }
 
-/* =========================
-   PRODUCTS HERO
-========================= */
-.products-hero {
-  min-height: 55vh;
-  padding-top: 120px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.nav-toggle:hover {
+  text-shadow: 0 0 8px rgba(201,164,76,0.6);
 }
 
-.products-hero h1 {
-  font-size: 40px;
+/* =========================
+   BREADCRUMB
+========================= */
+.breadcrumb {
+  max-width: 1200px;
+  margin: 22px auto;
+  padding: 0 20px;
+  font-size: 14px;
+  color: rgba(201, 164, 76, 0.9);
+}
+
+.breadcrumb a {
+  text-decoration: none;
   color: var(--gold);
 }
 
-.products-hero p {
-  margin-top: 10px;
-  color: #e7dccb;
-  font-size: 15px;
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb .current {
+  color: #9b7a2e;
+  font-weight: 500;
 }
 
 /* =========================
-   PRODUCTS GRID
+   PRODUCT DETAIL LAYOUT
 ========================= */
-.products-section {
-  max-width: 1100px;
+.product-detail {
+  max-width: 1200px;
   margin: auto;
-  padding: 80px 20px;
+  padding: 100px 24px 80px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
 /* =========================
-   PRODUCT CARD
+   PRODUCT IMAGE
 ========================= */
-.product-card {
-  background: rgba(251, 249, 246, 0.96);
-  padding: 30px;
-  border-radius: 4px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
+.product-image {
+  overflow: hidden;
 }
 
-.product-card img {
+.product-image img {
   width: 100%;
-  border-radius: 2px;
-  margin-bottom: 15px;
+  display: block;
+  transition: transform 0.45s ease;
 }
 
-.product-card h3 {
-  margin-bottom: 8px;
-  font-size: 18px;
-  color: var(--text-dark);
-}
-
-.product-card p {
-  font-size: 14px;
-  color: #5a5046;
-}
-
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 45px rgba(0,0,0,0.18);
+.product-image:hover img {
+  transform: scale(1.12);
 }
 
 /* =========================
-   BUTTON
+   PRODUCT INFO CARD
 ========================= */
-.btn-secondary {
+.product-info {
+  background: rgba(251, 249, 246, 0.92);
+  padding: 36px;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.product-info h1 {
+  font-size: 38px;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+
+.description {
+  font-size: 15px;
+  color: #4f453c;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   EXTRA DETAILS
+========================= */
+.extra-details h3 {
+  color: var(--gold);
+  margin: 25px 0 10px;
+  font-size: 18px;
+}
+
+.extra-details ul {
+  list-style: none;
+}
+
+.extra-details li {
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #4f453c;
+}
+
+.extra-details li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+/* =========================
+   CTA BUTTON
+========================= */
+.cta-btn {
   display: inline-block;
-  margin-top: 14px;
-  font-size: 13px;
+  margin-top: 40px;
+  padding: 12px 36px;
+  background: var(--gold);
+  color: var(--dark);
   text-decoration: none;
-  color: var(--text-dark);
-  border-bottom: 1px solid var(--gold);
-  padding-bottom: 2px;
+  font-size: 14px;
+  border-radius: 30px;
   transition: all 0.3s ease;
 }
 
-.btn-secondary:hover {
-  color: var(--gold);
-}
-
-/* =========================
-   FOOTER (NO WHITE GLOW)
-========================= */
-.footer {
-  text-align: center;
-  padding: 26px;
-  font-size: 14px;
-  color: #d8cfc4;
-  background: linear-gradient(
-    to bottom,
-    #3a2617,
-    #1a120a
-  );
-}
-
-/* =========================
-   FADE IN
-========================= */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
-@media (max-width: 768px) {
-
-  .products-hero h1 {
-    font-size: 30px;
-  }
+@media (max-width: 900px) {
 
   .nav-toggle {
     display: block;
@@ -241,17 +266,14 @@ body {
 
   .nav-links {
     position: absolute;
-    top: calc(100% - 4px);
-    left: 0;
+    top: 100%;
+    right: 0;
     width: 100%;
-    background: rgba(241, 237, 230, 0.99);
-    backdrop-filter: blur(6px);
-    display: none;
+    background: rgba(26, 18, 10, 0.98);
     flex-direction: column;
     align-items: center;
-    padding: 6px 0;
-    gap: 6px;
-    border-bottom: 1px solid rgba(0,0,0,0.07);
+    display: none;
+    padding: 20px 0;
   }
 
   .nav-links.active {
@@ -259,8 +281,16 @@ body {
   }
 
   .nav-links a {
-    margin-left: 0;
-    font-size: 14.5px;
-    padding: 2px 0;
+    margin: 14px 0;
+    font-size: 16px;
+  }
+
+  .product-detail {
+    grid-template-columns: 1fr;
+    padding-top: 70px;
+  }
+
+  .product-info h1 {
+    font-size: 30px;
   }
 }
