@@ -1,48 +1,42 @@
+/* =========================
+   GOOGLE FONT
+========================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 /* =========================
    ROOT VARIABLES
 ========================= */
 :root {
-  --gold: #c9a44c;
   --dark-brown: #1a120a;
-  --text-dark: #2a1c12;
+  --mid-brown: #3b2a1a;
+  --wood-brown: #6b4a2d;
+  --gold: #c9a44c;
+  --cream: #f1ede6;
+  --soft-white: #fbf9f6;
+  --text-dark: #1a120a;
+  --text-muted: #6f6a64;
 }
 
 /* =========================
-   RESET
-========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* =========================
-   BODY
+   BASE
 ========================= */
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.7;
   color: var(--text-dark);
-  padding-top: 84px; /* FIXED NAVBAR OFFSET */
   background: linear-gradient(
     to bottom,
-    #2a1c12 0%,
-    #4a3322 35%,
-    #9a744f 65%,
+    #1a120a 0%,
+    #3b2a1a 18%,
+    #6b4a2d 36%,
+    #a67c52 55%,
+    #d6c3aa 75%,
     #f1ede6 100%
   );
 }
 
-@media (max-width: 768px) {
-  body {
-    padding-top: 72px;
-  }
-}
-
 /* =========================
-   NAVBAR (UNCHANGED STYLE)
+   NAVBAR (FIXED – SAME AS HOME)
 ========================= */
 .navbar {
   position: fixed;
@@ -52,7 +46,6 @@ body {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0,0,0,0.06);
   z-index: 1000;
-  transition: all 0.35s ease;
 }
 
 .nav-inner {
@@ -64,18 +57,27 @@ body {
   align-items: center;
 }
 
-/* =========================
-   NAV LINKS
-========================= */
-.nav-links {
+.nav-logo {
   display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo img {
+  height: 36px;
+}
+
+.nav-logo span {
+  font-weight: 600;
+  font-size: 18px;
+  color: #2a1c12;
 }
 
 .nav-links a {
   margin-left: 30px;
   text-decoration: none;
   font-size: 14px;
-  color: var(--text-dark);
+  color: #2a1c12;
   position: relative;
 }
 
@@ -99,25 +101,23 @@ body {
   color: var(--gold);
 }
 
-/* =========================
-   HAMBURGER (SAME COLOR & SIZE)
-========================= */
+/* Hamburger */
 .nav-toggle {
   display: none;
-  cursor: pointer;
   font-size: 21px;
-  color: var(--text-dark);
-  user-select: none;
+  cursor: pointer;
+  color: #2a1c12;
 }
+
 /* =========================
-   BREADCRUMB
+   BREADCRUMB (RESTORED STYLE)
 ========================= */
 .breadcrumb {
   max-width: 1200px;
-  margin: 22px auto 0;
-  padding: 0 20px;
+  margin: 90px auto 0;
+  padding: 0 25px;
   font-size: 14px;
-  color: rgba(201, 164, 76, 0.85);
+  color: rgba(201,164,76,0.85);
 }
 
 .breadcrumb a {
@@ -129,115 +129,159 @@ body {
   text-decoration: underline;
 }
 
-.breadcrumb .current {
+.breadcrumb span {
   color: #9b7a2e;
-  font-weight: 500;
 }
 
 /* =========================
-   ABOUT HERO
+   HERO
 ========================= */
 .about-hero {
-  min-height: 55vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-  padding: 40px 20px;
+  padding: 80px 20px 90px;
 }
 
 .about-hero h1 {
   font-size: 40px;
+  font-weight: 600;
   color: var(--gold);
 }
 
 .about-hero p {
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 15px;
-  color: #e7dccb;
+  color: #eadfce;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* =========================
-   ABOUT CONTENT
+   ABOUT SECTION
 ========================= */
 .about-section {
-  max-width: 1100px;
+  padding: 95px 20px;
+}
+
+.about-container {
+  max-width: 1150px;
   margin: auto;
-  padding: 80px 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text {
+  background: rgba(251, 249, 246, 0.9);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.12);
 }
 
 .about-text h2 {
-  font-size: 26px;
-  margin-bottom: 15px;
-  color: var(--text-dark);
+  font-size: 30px;
+  color: var(--gold);
+  margin-bottom: 16px;
 }
 
 .about-text p {
   font-size: 15px;
-  margin-bottom: 15px;
-  color: #3b2a1e;
+  color: #4f453c;
+  margin-bottom: 18px;
 }
 
+/* IMAGE */
 .about-image img {
   width: 100%;
-  border-radius: 0; /* SHARP CORNERS */
-  box-shadow: 0 14px 35px rgba(0,0,0,0.15);
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
 
 /* =========================
-   VALUES / HIGHLIGHTS
+   VALUES
 ========================= */
-.values-section {
+.section-gradient {
+  background: rgba(251, 249, 246, 0.92);
+}
+
+.values-grid {
   max-width: 1100px;
   margin: auto;
-  padding: 60px 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
 }
 
 .value-card {
-  background: rgba(251, 249, 246, 0.95);
-  padding: 30px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-  border-radius: 0;
+  background: var(--soft-white);
+  padding: 34px;
+  border-radius: 16px;
+  box-shadow: 0 16px 38px rgba(0,0,0,0.12);
+  transition: all 0.35s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 55px rgba(0,0,0,0.18);
 }
 
 .value-card h3 {
-  margin-bottom: 8px;
-  color: var(--text-dark);
+  color: var(--gold);
+  margin-bottom: 10px;
 }
 
 .value-card p {
-  font-size: 14px;
+  font-size: 14.5px;
   color: #5a5046;
+}
+
+/* =========================
+   WHY CHOOSE
+========================= */
+.about-list {
+  max-width: 720px;
+  margin: auto;
+  list-style: none;
+}
+
+.about-list li {
+  font-size: 15px;
+  color: #4f453c;
+  padding: 12px 0 12px 26px;
+  position: relative;
+}
+
+.about-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 22px;
 }
 
 /* =========================
    FOOTER
 ========================= */
 .footer {
-  text-align: center;
-  padding: 24px;
-  font-size: 14px;
-  color: #d8cfc4;
   background: linear-gradient(
     to bottom,
-    rgba(26,18,10,0.4),
+    rgba(26,18,10,0.6),
     #1a120a
   );
+  color: #d8cfc4;
+  text-align: center;
+  padding: 28px;
+  font-size: 14px;
 }
 
 /* =========================
-   FADE IN
+   FADE-IN
 ========================= */
 .fade-in {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .fade-in.show {
@@ -246,17 +290,9 @@ body {
 }
 
 /* =========================
-   MOBILE RESPONSIVE
+   MOBILE NAV
 ========================= */
 @media (max-width: 768px) {
-
-  .about-hero h1 {
-    font-size: 30px;
-  }
-
-  .about-section {
-    grid-template-columns: 1fr;
-  }
 
   .nav-toggle {
     display: block;
@@ -264,17 +300,15 @@ body {
 
   .nav-links {
     position: absolute;
-    top: calc(100% - 4px);
+    top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(241, 237, 230, 0.99);
-    backdrop-filter: blur(6px);
+    background: rgba(241,237,230,0.98);
     display: none;
     flex-direction: column;
     align-items: center;
-    padding: 6px 0;
-    gap: 6px;
-    border-bottom: 1px solid rgba(0,0,0,0.07);
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
   }
 
   .nav-links.active {
@@ -282,8 +316,14 @@ body {
   }
 
   .nav-links a {
-    margin-left: 0;
-    font-size: 14.5px;
-    padding: 2px 0;
+    margin: 6px 0;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
   }
 }
