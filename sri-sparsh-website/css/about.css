@@ -1,25 +1,30 @@
-/* =========================
-   GLOBAL RESET
-========================= */
+/* ===============================
+   GLOBAL RESET & BASE
+================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Segoe UI", sans-serif;
-  background: #f4efe9;
+  background-color: #f4efe9;
   color: #2b2b2b;
   line-height: 1.6;
 }
 
-/* =========================
+/* ===============================
    HEADER / NAVBAR
-========================= */
+================================ */
 header {
-  background: #e8e1d8;
-  border-bottom: 1px solid #ddd;
+  background-color: #e8e1d8;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .navbar {
@@ -27,22 +32,22 @@ header {
   margin: auto;
   padding: 14px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 700;
   font-size: 20px;
+  font-weight: 700;
 }
 
 .nav-links a {
-  margin-left: 25px;
+  margin-left: 26px;
   text-decoration: none;
-  color: #333;
+  color: #2b2b2b;
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
@@ -55,7 +60,7 @@ header {
   bottom: -6px;
   width: 0%;
   height: 2px;
-  background: #c89b3c;
+  background-color: #c89b3c;
   transition: width 0.3s ease;
 }
 
@@ -68,31 +73,21 @@ header {
   width: 100%;
 }
 
-/* =========================
+/* ===============================
    HERO / ABOUT BANNER
-========================= */
+================================ */
 .about-hero {
-  position: relative;
-  background: linear-gradient(180deg, #5c3b1e, #8b5e34);
-  color: #fff;
-  padding: 80px 20px;
+  background: linear-gradient(to bottom, #5c3b1e, #8b5e34);
+  padding: 90px 20px;
   text-align: center;
-  overflow: hidden;
-}
-
-/* prevents background flash */
-.about-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  z-index: -1;
+  color: #ffffff;
 }
 
 .about-hero h1 {
-  font-size: 42px;
+  font-size: 44px;
+  font-weight: 700;
   color: #e2b14a;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .about-hero p {
@@ -100,23 +95,26 @@ header {
   opacity: 0.95;
 }
 
-/* =========================
-   WHO WE ARE SECTION
-========================= */
+/* ===============================
+   MAIN ABOUT SECTION
+================================ */
 .about-main {
   max-width: 1200px;
-  margin: 70px auto;
+  margin: 80px auto;
   padding: 0 20px;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 40px;
+  gap: 45px;
 }
 
+/* ===============================
+   ABOUT TEXT CARD
+================================ */
 .about-card {
-  background: #fffaf4;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  background-color: #fffaf4;
+  padding: 42px;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -126,22 +124,24 @@ header {
 }
 
 .about-card h2 {
+  font-size: 30px;
   color: #c89b3c;
-  font-size: 28px;
   margin-bottom: 15px;
 }
 
 .about-card p {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  font-size: 16px;
 }
 
-/* =========================
-   IMAGE BLOCK
-========================= */
+/* ===============================
+   IMAGE SECTION
+================================ */
 .about-image {
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
   position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 .about-image img {
@@ -155,39 +155,40 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.15);
+  background-color: rgba(0,0,0,0.18);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
 .about-image:hover img {
-  transform: scale(1.06);
+  transform: scale(1.07);
 }
 
 .about-image:hover::after {
   opacity: 1;
 }
 
-/* =========================
-   FEATURE CARDS
-========================= */
+/* ===============================
+   INFO / FEATURE CARDS
+================================ */
 .features {
   max-width: 1200px;
   margin: 60px auto;
   padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  gap: 26px;
 }
 
 .feature-card {
-  background: #fffaf4;
-  padding: 30px;
-  border-radius: 14px;
+  background-color: #fffaf4;
+  padding: 32px;
+  border-radius: 16px;
   text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: transform 0.35s ease;
 }
 
 .feature-card::before {
@@ -210,43 +211,67 @@ header {
 }
 
 .feature-card:hover {
-  color: #fff;
+  color: #ffffff;
+  transform: translateY(-6px);
 }
 
 .feature-card h3 {
   margin-bottom: 10px;
-  transition: color 0.3s ease;
+  font-size: 20px;
 }
 
-/* =========================
+/* ===============================
    WHY CHOOSE SECTION
-========================= */
+================================ */
 .why-choose {
   max-width: 1200px;
-  margin: 80px auto;
+  margin: 90px auto;
   padding: 0 20px;
 }
 
 .why-choose h2 {
-  font-size: 30px;
-  margin-bottom: 15px;
+  font-size: 32px;
+  margin-bottom: 18px;
 }
 
 .why-choose ul {
-  padding-left: 20px;
+  padding-left: 22px;
 }
 
 .why-choose li {
   margin-bottom: 10px;
+  font-size: 16px;
 }
 
-/* =========================
+/* ===============================
    FOOTER
-========================= */
+================================ */
 footer {
-  background: linear-gradient(180deg, #2b1a0f, #000);
-  color: #eee;
+  background: linear-gradient(to bottom, #2b1a0f, #000000);
+  color: #eaeaea;
   text-align: center;
-  padding: 25px 10px;
-  margin-top: 80px;
+  padding: 26px 12px;
+  margin-top: 90px;
+}
+
+footer p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .about-main {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links a {
+    margin-left: 18px;
+  }
 }
