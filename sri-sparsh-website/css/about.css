@@ -36,7 +36,7 @@ body {
 }
 
 /* =========================
-   NAVBAR (PINNED)
+   NAVBAR (PINNED & FIXED)
 ========================= */
 .navbar {
   position: fixed;
@@ -102,13 +102,14 @@ body {
 }
 
 /* =========================
-   HAMBURGER
+   HAMBURGER (ALIGNMENT FIX)
 ========================= */
 .nav-toggle {
   display: none;
   cursor: pointer;
   color: var(--text-dark);
   user-select: none;
+  line-height: 1;
 }
 
 /* =========================
@@ -178,19 +179,19 @@ body {
 }
 
 /* =========================
-   VALUES SECTION
+   VALUES SECTION (FIXED)
 ========================= */
 .about-values {
-  padding: 95px 20px;
+  padding: 95px 20px 70px;
 }
 
+/* 🔥 REMOVED SECOND WHITE LAYER */
 .section-gradient {
-  background: rgba(251, 249, 246, 0.92);
-  backdrop-filter: blur(6px);
+  background: transparent;
 }
 
 .values-grid {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -228,7 +229,7 @@ body {
   text-align: center;
   font-size: 32px;
   margin-bottom: 36px;
-  color: var(--gold);
+  color: var(--mid-brown);
 }
 
 .about-list {
@@ -296,6 +297,15 @@ body {
 }
 
 @media (max-width: 768px) {
+
+  .nav-inner {
+    padding: 14px 20px;
+  }
+
+  .nav-logo span {
+    font-size: 16px;
+  }
+
   .about-hero h1 {
     font-size: 34px;
   }
