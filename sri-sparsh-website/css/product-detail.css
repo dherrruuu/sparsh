@@ -7,11 +7,14 @@
    ROOT VARIABLES
 ========================= */
 :root {
-  --dark: #1a140f;
-  --brown: #2a1f18;
+  --dark: #1a120a;
+  --mid-brown: #3b2a1a;
+  --wood-brown: #6b4a2d;
   --gold: #c9a44c;
-  --light: #f2efe9;
-  --text: #e8e4dc;
+  --cream: #f1ede6;
+  --soft-white: #fbf9f6;
+  --text-dark: #1a120a;
+  --text-muted: #6f6a64;
 }
 
 /* =========================
@@ -24,13 +27,22 @@
 }
 
 /* =========================
-   BODY
+   BODY (BRAND BACKGROUND)
 ========================= */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, var(--dark), var(--light));
-  color: var(--text);
   line-height: 1.7;
+  color: var(--text-dark);
+
+  background: linear-gradient(
+    to bottom,
+    #1a120a 0%,
+    #3b2a1a 18%,
+    #6b4a2d 36%,
+    #a67c52 55%,
+    #d6c3aa 75%,
+    #f1ede6 100%
+  );
 }
 
 /* =========================
@@ -39,7 +51,7 @@ body {
 .navbar {
   position: sticky;
   top: 0;
-  background: rgba(26, 20, 15, 0.92);
+  background: rgba(26, 18, 10, 0.92);
   backdrop-filter: blur(8px);
   z-index: 1000;
 }
@@ -73,7 +85,7 @@ nav a {
   margin-left: 28px;
   text-decoration: none;
   font-size: 14px;
-  color: var(--text);
+  color: #f1ede6;
   position: relative;
 }
 
@@ -94,6 +106,31 @@ nav a.active::after {
 }
 
 /* =========================
+   BREADCRUMB
+========================= */
+.breadcrumb {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: var(--mid-brown);
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb .current {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+/* =========================
    PRODUCT DETAIL LAYOUT
 ========================= */
 .product-detail {
@@ -111,7 +148,6 @@ nav a.active::after {
 ========================= */
 .product-image {
   overflow: hidden;
-  border-radius: 0; /* sharp edges */
 }
 
 .product-image img {
@@ -125,8 +161,15 @@ nav a.active::after {
 }
 
 /* =========================
-   PRODUCT INFO
+   PRODUCT INFO (VISIBILITY FIX)
 ========================= */
+.product-info {
+  background: rgba(251, 249, 246, 0.9);
+  padding: 36px;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
 .product-info h1 {
   font-size: 38px;
   color: var(--gold);
@@ -135,18 +178,18 @@ nav a.active::after {
 
 .tagline {
   font-style: italic;
-  opacity: 0.9;
+  color: var(--text-muted);
   margin-bottom: 25px;
 }
 
 .description {
   font-size: 15px;
-  color: #ddd;
+  color: #4f453c;
   margin-bottom: 30px;
 }
 
 /* =========================
-   DETAILS
+   EXTRA DETAILS
 ========================= */
 .extra-details h3 {
   color: var(--gold);
@@ -163,7 +206,7 @@ nav a.active::after {
   position: relative;
   margin-bottom: 8px;
   font-size: 14px;
-  color: #e0dbd2;
+  color: #4f453c;
 }
 
 .extra-details li::before {
@@ -205,26 +248,4 @@ nav a.active::after {
   .product-info h1 {
     font-size: 30px;
   }
-}
-/* ================= Breadcrumb ================= */
-.breadcrumb {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 20px;
-  font-size: 14px;
-  color: #777;
-}
-
-.breadcrumb a {
-  text-decoration: none;
-  color: #444;
-}
-
-.breadcrumb a:hover {
-  text-decoration: underline;
-}
-
-.breadcrumb .current {
-  color: #000;
-  font-weight: 500;
 }
