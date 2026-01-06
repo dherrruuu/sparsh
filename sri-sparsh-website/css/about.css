@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 /* =========================
-   ROOT VARIABLES (BRAND)
+   ROOT VARIABLES
 ========================= */
 :root {
   --dark-brown: #1a120a;
@@ -18,12 +18,24 @@
 }
 
 /* =========================
-   PAGE RESET
+   RESET (IMPORTANT FIX)
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   PAGE BACKGROUND
 ========================= */
 body {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.7;
-  color: var(--text-dark);
   background: linear-gradient(
     to bottom,
     #1a120a 0%,
@@ -33,14 +45,17 @@ body {
     #d6c3aa 75%,
     #f1ede6 100%
   );
+  color: var(--text-dark);
+  line-height: 1.7;
 }
 
 /* =========================
-   NAVBAR (PINNED & FIXED)
+   NAVBAR (PINNED – NO GAP)
 ========================= */
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   background: rgba(241, 237, 230, 0.82);
   backdrop-filter: blur(10px);
@@ -57,6 +72,9 @@ body {
   align-items: center;
 }
 
+/* =========================
+   LOGO
+========================= */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -67,12 +85,9 @@ body {
   height: 36px;
 }
 
-.nav-logo span {
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-}
-
+/* =========================
+   NAV LINKS
+========================= */
 .nav-links a {
   margin-left: 30px;
   text-decoration: none;
@@ -102,22 +117,21 @@ body {
 }
 
 /* =========================
-   HAMBURGER (ALIGNMENT FIX)
+   HAMBURGER
 ========================= */
 .nav-toggle {
   display: none;
   cursor: pointer;
   color: var(--text-dark);
-  user-select: none;
-  line-height: 1;
 }
 
 /* =========================
-   HERO
+   HERO (OFFSET FIXED NAV)
 ========================= */
 .about-hero {
+  width: 100%;
+  padding: 140px 20px 90px; /* top padding FIX */
   text-align: center;
-  padding: 80px 20px 90px;
 }
 
 .about-hero h1 {
@@ -131,14 +145,14 @@ body {
   font-size: 15px;
   color: #eadfce;
   max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
 }
 
 /* =========================
    ABOUT SECTION
 ========================= */
 .about-section {
+  width: 100%;
   padding: 95px 20px;
 }
 
@@ -151,9 +165,9 @@ body {
   align-items: center;
 }
 
-/* TEXT */
+/* TEXT CARD */
 .about-text {
-  background: rgba(251, 249, 246, 0.9);
+  background: rgba(251, 249, 246, 0.95);
   padding: 32px;
   border-radius: 16px;
   box-shadow: 0 14px 32px rgba(0,0,0,0.12);
@@ -168,30 +182,26 @@ body {
 .about-text p {
   font-size: 15px;
   color: #4f453c;
-  margin-bottom: 18px;
 }
 
-/* IMAGE */
+/* IMAGE (SHARP CORNERS) */
 .about-image img {
   width: 100%;
-  border-radius: 18px;
+  border-radius: 0; /* sharp as requested */
   box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
 
 /* =========================
-   VALUES SECTION (FIXED)
+   VALUES
 ========================= */
 .about-values {
-  padding: 95px 20px 70px;
-}
-
-/* 🔥 REMOVED SECOND WHITE LAYER */
-.section-gradient {
-  background: transparent;
+  width: 100%;
+  padding: 95px 20px;
+  background: rgba(251, 249, 246, 0.92);
 }
 
 .values-grid {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -203,53 +213,9 @@ body {
   padding: 34px;
   border-radius: 16px;
   box-shadow: 0 16px 38px rgba(0,0,0,0.12);
-  transition: all 0.35s ease;
-}
-
-.value-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 26px 55px rgba(0,0,0,0.18);
 }
 
 .value-card h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: var(--gold);
-}
-
-.value-card p {
-  font-size: 14.5px;
-  color: #5a5046;
-}
-
-/* =========================
-   WHY CHOOSE
-========================= */
-.about-section h2 {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 36px;
-  color: var(--mid-brown);
-}
-
-.about-list {
-  max-width: 720px;
-  margin: auto;
-  list-style: none;
-}
-
-.about-list li {
-  font-size: 15px;
-  color: #4f453c;
-  padding: 12px 0 12px 26px;
-  position: relative;
-}
-
-.about-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  font-size: 22px;
   color: var(--gold);
 }
 
@@ -257,6 +223,7 @@ body {
    FOOTER
 ========================= */
 .footer {
+  width: 100%;
   background: linear-gradient(
     to bottom,
     rgba(26,18,10,0.6),
@@ -269,26 +236,11 @@ body {
 }
 
 /* =========================
-   FADE-IN
-========================= */
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 900px) {
   .about-container {
     grid-template-columns: 1fr;
-    gap: 45px;
   }
 
   .values-grid {
@@ -297,27 +249,6 @@ body {
 }
 
 @media (max-width: 768px) {
-
-  .nav-inner {
-    padding: 14px 20px;
-  }
-
-  .nav-logo span {
-    font-size: 16px;
-  }
-
-  .about-hero h1 {
-    font-size: 34px;
-  }
-
-  .about-text h2 {
-    font-size: 26px;
-  }
-
-  .about-section {
-    padding: 75px 20px;
-  }
-
   .nav-toggle {
     display: block;
   }
@@ -331,15 +262,9 @@ body {
     display: none;
     flex-direction: column;
     align-items: center;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
   }
 
   .nav-links.active {
     display: flex;
-  }
-
-  .nav-links a {
-    margin: 6px 0;
   }
 }
