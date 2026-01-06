@@ -27,35 +27,46 @@
 }
 
 /* =========================
-   BODY (WOOD BACKGROUND)
+   BODY
 ========================= */
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.7;
   color: var(--text-dark);
 
+  /* offset for fixed navbar */
+  padding-top: 84px;
+
+  /* warm wood gradient – NO white reflection */
   background: linear-gradient(
     to bottom,
     #1a120a 0%,
-    #2a1d13 22%,
-    #4a3422 44%,
-    #6b4a2d 65%,
-    #7a5a3c 82%,
+    #2a1d13 25%,
+    #4a3422 50%,
+    #6b4a2d 75%,
     #6b4a2d 100%
   );
 }
 
+@media (max-width: 768px) {
+  body {
+    padding-top: 72px;
+  }
+}
+
 /* =========================
-   NAVBAR (NOT PINNED)
+   NAVBAR (PINNED)
 ========================= */
 .navbar {
-  position: relative;
-  background: rgba(26, 18, 10, 0.95);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(26, 18, 10, 0.92);
   backdrop-filter: blur(8px);
   z-index: 1000;
 }
 
-.nav-container {
+.nav-inner {
   max-width: 1200px;
   margin: auto;
   padding: 16px 24px;
@@ -64,23 +75,28 @@ body {
   align-items: center;
 }
 
-.nav-brand {
+/* =========================
+   BRAND
+========================= */
+.nav-logo {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.nav-brand img {
+.nav-logo img {
   height: 38px;
 }
 
-.nav-brand span {
+.nav-logo span {
   font-weight: 600;
   color: var(--gold);
   font-size: 16px;
 }
 
-/* NAV LINKS */
+/* =========================
+   NAV LINKS
+========================= */
 .nav-links {
   display: flex;
 }
@@ -109,19 +125,19 @@ body {
   width: 100%;
 }
 
+.nav-links a.active {
+  color: var(--gold);
+}
+
 /* =========================
-   HAMBURGER (GOLD)
+   HAMBURGER (GOLDEN)
 ========================= */
 .nav-toggle {
   display: none;
-  font-size: 28px;
   cursor: pointer;
+  font-size: 22px;
   color: var(--gold);
   user-select: none;
-}
-
-.nav-toggle:hover {
-  text-shadow: 0 0 8px rgba(201,164,76,0.6);
 }
 
 /* =========================
@@ -129,10 +145,10 @@ body {
 ========================= */
 .breadcrumb {
   max-width: 1200px;
-  margin: 22px auto;
-  padding: 0 20px;
+  margin: 24px auto 0;
+  padding: 0 24px;
   font-size: 14px;
-  color: rgba(201, 164, 76, 0.9);
+  color: rgba(201, 164, 76, 0.85);
 }
 
 .breadcrumb a {
@@ -155,7 +171,7 @@ body {
 .product-detail {
   max-width: 1200px;
   margin: auto;
-  padding: 100px 24px 80px;
+  padding: 90px 24px 90px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -167,6 +183,7 @@ body {
 ========================= */
 .product-image {
   overflow: hidden;
+  border-radius: 16px;
 }
 
 .product-image img {
@@ -176,21 +193,21 @@ body {
 }
 
 .product-image:hover img {
-  transform: scale(1.12);
+  transform: scale(1.08);
 }
 
 /* =========================
-   PRODUCT INFO CARD
+   PRODUCT INFO
 ========================= */
 .product-info {
   background: rgba(251, 249, 246, 0.92);
   padding: 36px;
   border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
 }
 
 .product-info h1 {
-  font-size: 38px;
+  font-size: 36px;
   color: var(--gold);
   margin-bottom: 10px;
 }
@@ -198,7 +215,7 @@ body {
 .tagline {
   font-style: italic;
   color: var(--text-muted);
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 }
 
 .description {
@@ -212,7 +229,7 @@ body {
 ========================= */
 .extra-details h3 {
   color: var(--gold);
-  margin: 25px 0 10px;
+  margin: 24px 0 10px;
   font-size: 18px;
 }
 
@@ -240,7 +257,7 @@ body {
 ========================= */
 .cta-btn {
   display: inline-block;
-  margin-top: 40px;
+  margin-top: 36px;
   padding: 12px 36px;
   background: var(--gold);
   color: var(--dark);
@@ -259,6 +276,17 @@ body {
    RESPONSIVE
 ========================= */
 @media (max-width: 900px) {
+  .product-detail {
+    grid-template-columns: 1fr;
+    padding-top: 70px;
+  }
+
+  .product-info h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
 
   .nav-toggle {
     display: block;
@@ -267,13 +295,14 @@ body {
   .nav-links {
     position: absolute;
     top: 100%;
-    right: 0;
+    left: 0;
     width: 100%;
-    background: rgba(26, 18, 10, 0.98);
+    background: rgba(26, 18, 10, 0.97);
+    display: none;
     flex-direction: column;
     align-items: center;
-    display: none;
-    padding: 20px 0;
+    padding: 10px 0;
+    gap: 8px;
   }
 
   .nav-links.active {
@@ -281,16 +310,8 @@ body {
   }
 
   .nav-links a {
-    margin: 14px 0;
-    font-size: 16px;
-  }
-
-  .product-detail {
-    grid-template-columns: 1fr;
-    padding-top: 70px;
-  }
-
-  .product-info h1 {
-    font-size: 30px;
+    margin-left: 0;
+    padding: 6px 0;
+    font-size: 15px;
   }
 }
