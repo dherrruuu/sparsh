@@ -195,9 +195,13 @@ body {
    VALUES
 ========================= */
 .about-values {
-  width: 100%;
   padding: 95px 20px;
-  background: rgba(251, 249, 246, 0.92);
+  background: linear-gradient(
+    to bottom,
+    rgba(166,124,82,0.25),
+    rgba(107,74,45,0.15)
+  );
+}
 }
 
 .values-grid {
@@ -268,3 +272,4 @@ body {
     display: flex;
   }
 }
+
