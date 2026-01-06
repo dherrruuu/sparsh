@@ -37,13 +37,14 @@ body {
   background: linear-gradient(
     to bottom,
     #1a120a 0%,
-    #3b2a1a 18%,
-    #6b4a2d 36%,
-    #a67c52 55%,
-    #d6c3aa 75%,
-    #f1ede6 100%
+    #3b2a1a 20%,
+    #6b4a2d 42%,
+    #8b6a4a 62%,
+    #cbb59b 82%,
+    #e6dccf 100%
   );
 }
+
 
 /* =========================
    NAVBAR
@@ -110,15 +111,15 @@ nav a.active::after {
 ========================= */
 .breadcrumb {
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 22px auto;
   padding: 0 20px;
   font-size: 14px;
-  color: var(--text-muted);
+  color: rgba(201, 164, 76, 0.85);
 }
 
 .breadcrumb a {
   text-decoration: none;
-  color: var(--mid-brown);
+  color: var(--gold);
 }
 
 .breadcrumb a:hover {
@@ -126,9 +127,10 @@ nav a.active::after {
 }
 
 .breadcrumb .current {
-  color: var(--text-dark);
+  color: #9b7a2e;
   font-weight: 500;
 }
+
 
 /* =========================
    PRODUCT DETAIL LAYOUT
@@ -249,3 +251,4 @@ nav a.active::after {
     font-size: 30px;
   }
 }
+
