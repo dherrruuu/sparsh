@@ -33,31 +33,23 @@ html, body {
 }
 
 /* =========================
-   PAGE BACKGROUND
+   BODY (NO GRADIENT HERE)
 ========================= */
 body {
-  background: linear-gradient(
-    to bottom,
-    #1a120a 0%,
-    #3b2a1a 18%,
-    #6b4a2d 36%,
-    #a67c52 55%,
-    #d6c3aa 75%,
-    #f1ede6 100%
-  );
+  background: var(--cream);
   color: var(--text-dark);
   line-height: 1.7;
 }
 
 /* =========================
-   NAVBAR
+   NAVBAR (PINNED)
 ========================= */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(241, 237, 230, 0.82);
+  background: rgba(241, 237, 230, 0.88);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0,0,0,0.06);
   z-index: 1000;
@@ -83,18 +75,16 @@ body {
   height: 36px;
 }
 
-/* NAV LINKS */
-.nav-links {
-  display: flex;
-  align-items: center;
-}
-
+/* =========================
+   NAV LINKS + HOVER (FIXED)
+========================= */
 .nav-links a {
   margin-left: 30px;
   text-decoration: none;
   font-size: 14px;
   color: var(--text-dark);
   position: relative;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .nav-links a::after {
@@ -108,6 +98,11 @@ body {
   transition: width 0.3s ease;
 }
 
+.nav-links a:hover {
+  color: var(--gold);
+  transform: translateY(-1px);
+}
+
 .nav-links a:hover::after,
 .nav-links a.active::after {
   width: 100%;
@@ -117,19 +112,29 @@ body {
   color: var(--gold);
 }
 
-/* HAMBURGER */
+/* =========================
+   HAMBURGER
+========================= */
 .nav-toggle {
   display: none;
   cursor: pointer;
-  color: var(--text-dark);
+  color: var(--gold);
 }
 
 /* =========================
-   HERO
+   HERO (ONLY PLACE WITH GRADIENT)
 ========================= */
 .about-hero {
-  padding: 120px 20px 70px;
+  width: 100%;
+  padding: 140px 20px 80px;
   text-align: center;
+  background: linear-gradient(
+    to bottom,
+    #1a120a 0%,
+    #3b2a1a 35%,
+    #6b4a2d 70%,
+    #a67c52 100%
+  );
 }
 
 .about-hero h1 {
@@ -147,10 +152,11 @@ body {
 }
 
 /* =========================
-   ABOUT SECTION
+   ABOUT SECTION (WHITE ONLY)
 ========================= */
 .about-section {
   padding: 90px 20px;
+  background: var(--cream);
 }
 
 .about-container {
@@ -164,8 +170,8 @@ body {
 
 /* TEXT CARD */
 .about-text {
-  background: rgba(251, 249, 246, 0.95);
-  padding: 30px;
+  background: var(--soft-white);
+  padding: 32px;
   border-radius: 16px;
   box-shadow: 0 14px 32px rgba(0,0,0,0.12);
 }
@@ -189,15 +195,11 @@ body {
 }
 
 /* =========================
-   VALUES
+   VALUES SECTION (NO GRADIENT BLEED)
 ========================= */
 .about-values {
-  padding: 80px 20px;
-  background: linear-gradient(
-    to bottom,
-    rgba(166,124,82,0.25),
-    rgba(107,74,45,0.15)
-  );
+  padding: 90px 20px;
+  background: var(--cream);
 }
 
 .values-grid {
@@ -205,18 +207,19 @@ body {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 34px;
 }
 
 .value-card {
   background: var(--soft-white);
-  padding: 28px;
+  padding: 34px;
   border-radius: 16px;
   box-shadow: 0 16px 38px rgba(0,0,0,0.12);
 }
 
 .value-card h3 {
   color: var(--gold);
+  margin-bottom: 10px;
 }
 
 /* =========================
@@ -225,7 +228,7 @@ body {
 .footer {
   background: linear-gradient(
     to bottom,
-    rgba(26,18,10,0.6),
+    rgba(26,18,10,0.7),
     #1a120a
   );
   color: #d8cfc4;
@@ -261,9 +264,14 @@ body {
     display: none;
     flex-direction: column;
     align-items: center;
+    padding: 15px 0;
   }
 
   .nav-links.active {
     display: flex;
+  }
+
+  .nav-links a {
+    margin: 12px 0;
   }
 }
