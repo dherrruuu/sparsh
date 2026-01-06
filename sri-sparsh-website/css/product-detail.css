@@ -74,24 +74,7 @@ body {
   align-items: center;
 }
 
-/* =========================
-   BRAND
-========================= */
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
-.nav-logo img {
-  height: 38px;
-}
-
-.nav-logo span {
-  font-weight: 600;
-  color: var(--gold);
-  font-size: 16px;
-}
 
 /* =========================
    NAV LINKS
@@ -129,16 +112,14 @@ body {
 }
 
 /* =========================
-   HAMBURGER (DARK, SAME AS LINKS)
+   HAMBURGER
 ========================= */
 .nav-toggle {
   display: none;
   cursor: pointer;
-  font-size: 22px;
   color: var(--text-dark);
   user-select: none;
 }
-
 /* =========================
    BREADCRUMB
 ========================= */
@@ -303,3 +284,4 @@ body {
     font-size: 15px;
   }
 }
+
