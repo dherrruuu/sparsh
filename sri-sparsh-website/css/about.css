@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 /* =========================
-   ROOT VARIABLES
+   ROOT VARIABLES (BRAND)
 ========================= */
 :root {
   --dark-brown: #1a120a;
@@ -18,7 +18,7 @@
 }
 
 /* =========================
-   BASE
+   PAGE RESET
 ========================= */
 body {
   font-family: 'Poppins', sans-serif;
@@ -36,7 +36,7 @@ body {
 }
 
 /* =========================
-   NAVBAR (FIXED – SAME AS HOME)
+   NAVBAR (PINNED)
 ========================= */
 .navbar {
   position: fixed;
@@ -70,14 +70,14 @@ body {
 .nav-logo span {
   font-weight: 600;
   font-size: 18px;
-  color: #2a1c12;
+  letter-spacing: 0.5px;
 }
 
 .nav-links a {
   margin-left: 30px;
   text-decoration: none;
   font-size: 14px;
-  color: #2a1c12;
+  color: var(--text-dark);
   position: relative;
 }
 
@@ -101,36 +101,14 @@ body {
   color: var(--gold);
 }
 
-/* Hamburger */
+/* =========================
+   HAMBURGER
+========================= */
 .nav-toggle {
   display: none;
-  font-size: 21px;
   cursor: pointer;
-  color: #2a1c12;
-}
-
-/* =========================
-   BREADCRUMB (RESTORED STYLE)
-========================= */
-.breadcrumb {
-  max-width: 1200px;
-  margin: 90px auto 0;
-  padding: 0 25px;
-  font-size: 14px;
-  color: rgba(201,164,76,0.85);
-}
-
-.breadcrumb a {
-  text-decoration: none;
-  color: var(--gold);
-}
-
-.breadcrumb a:hover {
-  text-decoration: underline;
-}
-
-.breadcrumb span {
-  color: #9b7a2e;
+  color: var(--text-dark);
+  user-select: none;
 }
 
 /* =========================
@@ -172,6 +150,7 @@ body {
   align-items: center;
 }
 
+/* TEXT */
 .about-text {
   background: rgba(251, 249, 246, 0.9);
   padding: 32px;
@@ -199,10 +178,15 @@ body {
 }
 
 /* =========================
-   VALUES
+   VALUES SECTION
 ========================= */
+.about-values {
+  padding: 95px 20px;
+}
+
 .section-gradient {
   background: rgba(251, 249, 246, 0.92);
+  backdrop-filter: blur(6px);
 }
 
 .values-grid {
@@ -227,8 +211,9 @@ body {
 }
 
 .value-card h3 {
-  color: var(--gold);
+  font-size: 20px;
   margin-bottom: 10px;
+  color: var(--gold);
 }
 
 .value-card p {
@@ -239,6 +224,13 @@ body {
 /* =========================
    WHY CHOOSE
 ========================= */
+.about-section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 36px;
+  color: var(--gold);
+}
+
 .about-list {
   max-width: 720px;
   margin: auto;
@@ -256,8 +248,8 @@ body {
   content: "•";
   position: absolute;
   left: 0;
-  color: var(--gold);
   font-size: 22px;
+  color: var(--gold);
 }
 
 /* =========================
@@ -290,9 +282,31 @@ body {
 }
 
 /* =========================
-   MOBILE NAV
+   RESPONSIVE
 ========================= */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 34px;
+  }
+
+  .about-text h2 {
+    font-size: 26px;
+  }
+
+  .about-section {
+    padding: 75px 20px;
+  }
 
   .nav-toggle {
     display: block;
@@ -317,13 +331,5 @@ body {
 
   .nav-links a {
     margin: 6px 0;
-  }
-
-  .about-container {
-    grid-template-columns: 1fr;
-  }
-
-  .values-grid {
-    grid-template-columns: 1fr;
   }
 }
