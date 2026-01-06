@@ -59,13 +59,20 @@ body {
   align-items: center;
 }
 
-
-
-/* =========================
-   NAV LINKS
-========================= */
-.nav-links {
+.nav-logo {
   display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo img {
+  height: 36px;
+}
+
+.nav-logo span {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.5px;
 }
 
 .nav-links a {
@@ -91,11 +98,9 @@ body {
 .nav-links a.active::after {
   width: 100%;
 }
-
 .nav-links a.active {
   color: var(--gold);
 }
-
 /* =========================
    HAMBURGER
 ========================= */
@@ -306,5 +311,6 @@ body {
   border-radius: 16px;
   box-shadow: 0 14px 32px rgba(0,0,0,0.12);
 }
+
 
 
