@@ -14,7 +14,7 @@
   --cream: #f1ede6;
   --white: #ffffff;
   --text-dark: #2a1c12;
-  --text-muted: #5a5046;
+  --text-muted: #6b5e52;
 }
 
 /* =========================
@@ -28,15 +28,15 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  line-height: 1.7;
   color: var(--text-dark);
+  line-height: 1.7;
   background: linear-gradient(
     to bottom,
     #3b2615 0%,
-    #5a3b22 25%,
-    #7a5536 45%,
-    #a57c57 65%,
-    #d4bfa7 85%,
+    #5a3b22 30%,
+    #7a5536 50%,
+    #a57c57 70%,
+    #d4bfa7 88%,
     #f1ede6 100%
   );
 }
@@ -45,84 +45,105 @@ body {
    HERO
 ========================= */
 .about-hero {
-  padding: 140px 20px 110px;
+  padding: 160px 20px 110px;
   text-align: center;
-  color: #fff;
+  background: linear-gradient(
+    to bottom,
+    #3b2615 0%,
+    #5a3b22 60%,
+    #7a5536 100%
+  );
 }
 
 .about-hero h1 {
-  font-size: 42px;
-  margin-bottom: 14px;
+  font-size: 46px;
   color: var(--gold);
+  margin-bottom: 12px;
 }
 
 .about-hero p {
-  font-size: 16px;
-  max-width: 620px;
-  margin: auto;
+  color: #f1ede6;
+  font-size: 17px;
 }
 
 /* =========================
-   ABOUT SECTION
+   WHO WE ARE (DARK)
 ========================= */
 .about-section {
-  padding: 90px 20px;
+  padding: 110px 20px;
+}
+
+.about-section:first-of-type {
+  background: linear-gradient(
+    to bottom,
+    #4a2f1b 0%,
+    #5a3b22 100%
+  );
 }
 
 .about-container {
   max-width: 1200px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
   align-items: center;
 }
 
-.about-text h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-.about-text p {
-  font-size: 15px;
-  color: var(--text-muted);
-  margin-bottom: 15px;
-}
-
+/* IMAGE LEFT */
 .about-image img {
   width: 100%;
   border-radius: 18px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+}
+
+/* TEXT RIGHT */
+.about-text h2 {
+  color: var(--gold);
+  font-size: 34px;
+  margin-bottom: 18px;
+}
+
+.about-text p {
+  color: #eadfce;
+  font-size: 15.5px;
+  margin-bottom: 14px;
 }
 
 /* =========================
-   VALUES SECTION
+   VALUES (WHITE CARDS)
 ========================= */
-.about-values {
-  padding: 110px 20px;
+.section-gradient {
+  padding: 130px 20px;
+  background: linear-gradient(
+    to bottom,
+    #5a3b22 0%,
+    #7a5536 45%,
+    #a57c57 100%
+  );
 }
 
 .values-grid {
   max-width: 1200px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
-/* WHITE CARDS */
 .value-card {
   background: var(--white);
-  border-radius: 20px;
-  padding: 40px 32px;
+  border-radius: 18px;
+  padding: 42px 30px;
   text-align: center;
   box-shadow: 0 18px 45px rgba(0,0,0,0.18);
   transition: all 0.35s ease;
 }
 
 .value-card h3 {
-  font-size: 21px;
+  font-size: 22px;
   margin-bottom: 14px;
+  color: var(--text-dark);
 }
 
 .value-card p {
@@ -130,26 +151,36 @@ body {
   color: var(--text-muted);
 }
 
-/* HOVER EFFECT */
+/* HOVER */
 .value-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 30px 70px rgba(0,0,0,0.28);
+  box-shadow: 0 28px 65px rgba(0,0,0,0.25);
 }
 
 /* =========================
-   WHY CHOOSE SPARSH
+   WHY CHOOSE (CENTERED)
 ========================= */
-.about-section h2 {
+.about-section:last-of-type {
+  background: linear-gradient(
+    to bottom,
+    #a57c57 0%,
+    #d4bfa7 55%,
+    #f1ede6 100%
+  );
   text-align: center;
-  font-size: 32px;
-  margin-bottom: 35px;
+}
+
+.about-section h2 {
+  font-size: 34px;
+  color: var(--dark-brown);
+  margin-bottom: 30px;
 }
 
 .about-list {
-  max-width: 900px;
-  margin: auto;
   list-style: none;
-  text-align: center;
+  max-width: 720px;
+  margin: auto;
+  padding: 0;
 }
 
 .about-list li {
@@ -163,19 +194,19 @@ body {
 ========================= */
 .footer {
   background: #2a1c12;
-  color: #d8cfc4;
+  color: #e0d6ca;
   text-align: center;
-  padding: 35px;
+  padding: 38px;
   font-size: 14px;
 }
 
 /* =========================
-   FADE-IN ANIMATION
+   FADE IN
 ========================= */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.9s ease;
+  transition: all 0.8s ease;
 }
 
 .fade-in.show {
@@ -193,15 +224,11 @@ body {
     text-align: center;
   }
 
-  .about-image {
-    order: -1;
+  .values-grid {
+    grid-template-columns: 1fr;
   }
 
   .about-hero h1 {
-    font-size: 32px;
-  }
-
-  .about-section h2 {
-    font-size: 26px;
+    font-size: 34px;
   }
 }
